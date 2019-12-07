@@ -1,0 +1,556 @@
+
+<!-- USER INFORMATION tab -->
+<div
+        role="main"
+        class="container tab"
+        id="Account"
+        style="display: none;"
+>
+    <!-- Section for if user is registered -->
+    <section class="account-information">
+        <div class="account-navigation-panel">
+            <h2 id="account-username-header"></h2>
+            <div class="account-links">
+                <ul class="account-nav-list">
+                    <li class="account-nav-item">
+                        <a
+                                class="account-nav-link active"
+                                href="#"
+                                id="overview-link">
+                            User Information
+                        </a>
+                    </li>
+                    <li class="account-nav-item">
+                        <a
+                                class="account-nav-link"
+                                href="#"
+                                id="shipping-link">
+                            Shipping Information
+                        </a>
+                    </li>
+                    <li class="account-nav-item">
+                        <a
+                                class="account-nav-link"
+                                href="#"
+                                id="saved-payment-link">
+                            Payment Information
+                        </a>
+                    </li>
+                    <li class="account-nav-item">
+                        <a
+                                class="account-nav-link"
+                                href="#"
+                                id="order-history-link">
+                            Orders
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="account-information-panel">
+            <h2>User Information</h2>
+            <div class="user-information-table">
+                <h4
+                        id="start-contact-information-label">Contact Information:
+                </h4>
+                <div class="user-information-block ">
+                    <span class="name-label user-info-label">Name</span>
+                    <span class="name-value user-info-value"
+                    ></span
+                    >
+                </div>
+                <div class="user-information-block">
+                    <span class="phone-label user-info-label">phone</span>
+                    <span class="phone-value user-info-value"
+                    ></span
+                    >
+                </div>
+                <div class="user-information-block">
+                    <span class="email-label user-info-label">email</span>
+                    <span class="email-value user-info-value"
+                    ></span
+                    >
+                </div>
+                <h4
+                        id="start-billing-address-label">Billing Address:
+                </h4>
+                <div class="user-information-block">
+                    <span class="address-1-label user-info-label">Address</span>
+                    <span class="address-1-value user-info-value"
+                    ></span
+                    >
+                </div>
+                <div class="user-information-block show-address2-block">
+                    <span class="address-2-label user-info-label">Address 2</span>
+                    <span class="address-2-value user-info-value"
+                    ></span
+                    >
+                </div>
+                <div class="user-information-block">
+                    <span class="city-label user-info-label">City</span>
+                    <span class="city-value user-info-value"></span>
+                </div>
+                <div class="user-information-block">
+                    <span class="state-label user-info-label">state</span>
+                    <span class="state-value user-info-value"
+                    ></span
+                    >
+                </div>
+                <div class="user-information-block">
+                    <span class="zip-code-label user-info-label">Zip Code</span>
+                    <span class="zip-code-value user-info-value"
+                    ></span
+                    >
+                </div>
+            </div>
+            <div class="edit-user-buttons">
+                <button class="edit-user-button" type="button">Edit</button>
+                <button class="delete-account-button" type="button">Delete Account</button>
+            </div>
+        </div>
+        <div class="shipping-info-panel">
+            <h2>Shipping Address</h2>
+            <!-- Action will go to our web server (node) -->
+            <form
+                    class="shipping-info-form"
+                    action=""
+                    method="post"
+                    name="shipping-info-form"
+                    id="shipping-info-form"
+            >
+                <p>
+                    <input
+                            id="use-billing-address-for-shipping"
+                            class="checkbox-custom physical-address"
+                            type="checkbox"
+                            name="physical_address"
+                    />
+                    <label
+                            class="checkbox-label physical-address"
+                            for="use-billing-address-for-shipping"
+                    >Use Billing Address?</label
+                    >
+                    <span class="error-field" id="billing-address-error-message">
+                    You Haven't Registered A Billing Address!!!
+                </span>
+                </p>
+                <div class="Shipping Address">
+                    <input
+                            title="Address 1"
+                            type="text"
+                            id="shipping_address_1"
+                            name="street_address"
+                            maxlength="100"
+                            placeholder="Street Address"
+                            pattern="^\s*\S+(?:\s+\S+){2,3}"
+                            width="382.5"
+                            height="43"
+                            required
+                    />
+                    <span class="error-field" id="address-1-error-message"></span>
+                    <br/>
+                    <label for="shipping_address_2"></label>
+                    <input
+                            title="Address 2"
+                            type="text"
+                            id="shipping_address_2"
+                            name="street_address2"
+                            maxlength="100"
+                            pattern="^[a-zA-Z0-9\s,.'-]{3,}$"
+                            width="382.5"
+                            height="43"
+                            placeholder="Apt, Suite, Bldg, (optional)"
+                    />
+                    <span class="error-field" id="address-2-error-message"></span>
+                </div>
+                <br/>
+                <div class="Shipping Location">
+                    <span class="error-field" id="city-shipping-error-message"></span>
+                    <label for="shipping_city"></label>
+                    <input
+                            title="City"
+                            type="text"
+                            id="shipping_city"
+                            name="user_city"
+                            placeholder="City"
+                            pattern="^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$"
+                            width="382.5"
+                            height="43"
+                            required
+                    />
+                    <!-- TODO: Move to a DB and load with AJAX -->
+                    <label for="shipping_user_state"></label>
+                    <select title="Users State" name="state" id="shipping_user_state">
+                        <option value="" selected="selected">State</option>
+                    </select>
+                    <span
+                            class="error-field"
+                            id="shipping-state-error-message"
+                    ></span>
+                    <br/>
+                    <label for="shipping_zipcode"></label>
+                    <span class="error-field" id="shipping-zip-error-message"></span>
+                    <input
+                            title="Zip Code"
+                            type="text"
+                            id="shipping_zipcode"
+                            name="user_zip"
+                            placeholder="Zip Code"
+                            maxlength="9"
+                            minlength="5"
+                            width="382.5"
+                            height="43"
+                            pattern="(^\d{5}$)|(^\d{5}-\d{4}$)"
+                            required
+                    />
+                </div>
+                <br/>
+                <div class="shipping-info-buttons">
+                    <button
+                            class="shipping-info-submit-btn disabled-button"
+                            id="shipping-info-submit-btn"
+                            type="submit"
+                            disabled
+                    >
+                        Save
+                    </button>
+                    <input
+                            class="shipping-info-rest-btn"
+                            type="reset"
+                            value="Reset"
+                    />
+                </div>
+
+                <br/>
+            </form>
+        </div>
+        <div class="saved-payment-methods-panel">
+            <h2>Manage Payment Methods</h2>
+            <span id="account-payment-methods-overview-message"></span>
+        </div>
+        <div class="order-history-panel">
+            <h2>Order History</h2>
+            <span id="account-order-history-overview-message"></span>
+            <table id="user-order-table">
+                <caption hidden>
+                    User Order History
+                </caption>
+                <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Order Items</th>
+                    <th>Order Price</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Section for if User is not registered -->
+    <section class="register-account">
+        <div class="register-user-panel">
+            <h2 id="account-login-signup-header">Sign In</h2>
+            <!-- action attribute defines action performed when the form is submitted -->
+            <!-- use HTTP post method for sensitive information-->
+
+            <!-- Start User Sign In Form -->
+            <form class="sign-in-form"
+                  name="sign-in-form"
+                action=""
+                method="POST"
+                ><!-- Panel to Sign In -->
+                    <div id="sign-in-panel" class="user-sign-in-panel">
+                        <img class="login-icon" src="../assets/images/sign-into-account-icon.jpg"
+                             alt="Creating Account Icon">
+                        <div class="username-label">
+                            <!--                            <label for="new-username">Username:</label>-->
+                            <span
+                                    class="error-field"
+                                    id="username-error-message"
+                            ></span>
+                        </div>
+                        <div class="username-input"><input
+                                    title="Username"
+                                    type="text"
+                                    id="sign-in-username"
+                                    name="returning-username"
+                                    maxlength="20"
+                                    placeholder="Username"
+                                    required
+                            />
+                        </div>
+                        <div class="password-label-flex-row-1">
+                            <!--                                <label for="first-password-typed-attempt">Password:</label>-->
+                            <span
+                                    class="error-field"
+                                    id="user-password-error-message"
+                            ></span>
+                        </div>
+                        <div class="password-input-flex-row-2"><input
+                                    title="password"
+                                    type="password"
+                                    id="user-password-attempt"
+                                    name="returning-password"
+                                    maxlength="30"
+                                    placeholder="Password"
+                                    required
+                            />
+                        </div>
+                        <div class="sign-in-account-buttons">
+                            <button id="sign-in-account-btn" class="sign-in-btns">Login</button>
+                            <div class="alternate-sign-in-btns">
+                                <button type="button" id="forgot-password-account-btn" class="sign-in-btns">Forgot Password</button>
+                                <button type="button" id="go-to-sign-up-btn" class="sign-in-btns">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Panel to Sign In --></form>
+            <!-- END User Sign In Form -->
+
+            <!-- Start Create Account Form -->
+            <form class="create-account-form",
+                  name="create-account-form"
+                  action=""
+                  method="POST"
+                ><!-- Panel to Create an Account -->
+                    <div id="sign-up-create-acc-panel" class="sign-up-make-account-panel hide-panel">
+                        <div class="user-new-account-information">
+                            <img class="create-account-icon" src="../assets/images/create-account-icon.jpg"
+                                 alt="Creating Account Icon">
+                            <!-- Make this flex row -->
+                            <div class="new-username-registration flex-column-1">
+                                <!-- Row One -->
+                                <div class="new-username-label-flex-row-1">
+                                    <!--                            <label for="new-username">Username:</label>-->
+                                    <span
+                                            class="error-field"
+                                            id="new-username-error-message"
+                                    ></span>
+                                </div>
+                                <div class="register-username-input-flex-row-2"><input
+                                            title="Username"
+                                            type="text"
+                                            id="new-username"
+                                            name="new-username"
+                                            maxlength="20"
+                                            placeholder="Pick a Username"
+                                            required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="new-password-first-try flex-column-2">
+                                <div class="new-password-label-flex-row-1">
+                                    <!--                                <label for="first-password-typed-attempt">Password:</label>-->
+                                    <span
+                                            class="error-field"
+                                            id="password-one-error-message"
+                                    ></span>
+                                </div>
+                                <div class="new-password-input-flex-row-2"><input
+                                            title="password"
+                                            type="password"
+                                            id="new-password"
+                                            name="new-password"
+                                            maxlength="30"
+                                            placeholder="Password"
+                                            required
+                                    />
+                                </div>
+
+                            </div>
+
+                            <div class="new-password-second-try flex-column-3">
+                                <div class="retype-password-label-flex-row-1">
+                                    <!--                                <label for="second-password-typed-attempt">Confirm Password:</label>-->
+                                    <span
+                                            class="error-field"
+                                            id="password-two-error-message"
+                                    ></span>
+                                </div>
+                                <div class="retyped-password-input-flex-row-2"><input
+                                            title="password"
+                                            type="password"
+                                            id="new-password-confirm"
+                                            name="new-password-confirm"
+                                            maxlength="30"
+                                            placeholder="Retype Password"
+                                            required
+                                    />
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="sign-up-account-buttons">
+                            <button id="create-account-btn" class="create-account-btns">
+                                Register
+                            </button>
+                            <p>Already have an account?&nbsp&nbsp <a href="#" id="go-back-to-sign-in-link">Login</a></p>
+                        </div>
+                    </div>
+                    <!-- END Panel to Create an Account --></form>
+            <!-- END Create Account Form -->
+
+            <!-- Start Additional User Information Form -->
+            <form class="additional-user-information-form"
+                action=""
+                method="POST"
+                ><!-- Full Name Registration Labels/Fields -->
+                    <div id="sign-up-additional-information-panel"
+                         class="sign-up-additional-information-panel">
+                        <div class="register-full-name">
+                            <!--                    <label for="user_first_name">First Name:</label>-->
+                            <input
+                                    title="First Name"
+                                    type="text"
+                                    id="user_first_name"
+                                    name="first_name"
+                                    maxlength="100"
+                                    placeholder="First Name"
+                                    required
+                            />
+                            <span
+                                    class="error-field"
+                                    id="user-first-name-error-message"
+                            ></span>
+                            <!--                    <label for="user_last_name">Last Name:</label>-->
+                            <span
+                                    class="error-field"
+                                    id="user-last-name-error-message"
+                            ></span>
+                            <input
+                                    title="Last Name"
+                                    type="text"
+                                    id="user_last_name"
+                                    name="last_name"
+                                    maxlength="100"
+                                    placeholder="Last Name"
+                                    required
+                            />
+                        </div>
+                        <div class="register-contact-information">
+                            <!--                    <label for="user_phone">Phone:</label>-->
+                            <span class="error-field" id="user-phone-error-message"></span>
+                            <input
+                                    title="User Phone"
+                                    type="tel"
+                                    id="user_phone"
+                                    name="user_phone"
+                                    placeholder="Primary Phone"
+                                    required
+                            />
+                            <!--                    <label for="user_email">Email:</label>-->
+                            <span class="error-field" id="user-email-error-message"></span>
+                            <input
+                                    title="User Email"
+                                    type="email"
+                                    id="user_email"
+                                    name="user_email"
+                                    placeholder="Email"
+                                    required
+                            />
+                        </div>
+                        <!-- END Contact Information Registration Labels/Fields -->
+
+                        <!-- Address Registration Labels/Fields -->
+                        <div class="register-user-address">
+                            <label for="user_address_1">Address Line 1:</label>
+                            <span
+                                    class="error-field"
+                                    id="user-address-1-error-message"
+                            ></span>
+                            <input
+                                    title="Address 1"
+                                    type="text"
+                                    id="user_address_1"
+                                    name="street_address"
+                                    maxlength="100"
+                                    placeholder="Street Address"
+                                    required
+                            />
+
+                            <label for="user_address_2">Address Line 2:</label>
+                            <span
+                                    class="error-field"
+                                    id="user-address-2-error-message"
+                            ></span>
+                            <!--              <span class="register-optional">Optional</span>-->
+                            <input
+                                    title="Address 2"
+                                    type="text"
+                                    id="user_address_2"
+                                    name="street_address2"
+                                    maxlength="100"
+                                    placeholder="Apt, Suite, Bldg"
+                            />
+                        </div>
+                        <!-- END Address Registration Labels/Fields -->
+
+                        <!-- Location Registration Labels/Fields -->
+                        <div class="register-user-location">
+                            <div class="flex-user-location register-flex-row-1">
+                                <label class="register-city-label" for="user_city"
+                                >City:</label
+                                >
+                                <span class="error-field" id="user-city-error-message"></span>
+                                <input
+                                        title="City"
+                                        type="text"
+                                        id="user_city"
+                                        name="user_city"
+                                        placeholder="City"
+                                        required
+                                />
+                            </div>
+
+                            <div class="flex-user-location register-flex-row-2">
+                  <span
+                          class="error-field"
+                          id="user-state-error-message"
+                  ></span>
+                                <label class="register-state-label" for="user_state"
+                                >State:</label
+                                >
+                                <!-- TODO: Move to a DB and load with AJAX -->
+                                <select title="Users State" name="state" id="user_state">
+                                    <option value="" selected="selected">State</option>
+                                </select>
+                            </div>
+
+                            <div class="flex-user-location register-flex-row-3">
+                                <label for="user_zipcode" class="register-zip-label">
+                                    Zip Code:</label
+                                >
+                                <span class="error-field" id="user-zip-error-message"></span>
+                                <input
+                                        title="Zip-Code"
+                                        type="text"
+                                        id="user_zipcode"
+                                        name="user_zip"
+                                        placeholder="Zip Code"
+                                        required
+                                />
+                            </div>
+                        </div>
+                        <!-- END Location Registration Labels/Fields -->
+                        <br/>
+                        <div class="register-user-buttons">
+                            <button id="register-user-btn" class="register-user-button disabled-button"
+                                    disabled>Finish
+                            </button>
+                            <button class="reset-user-fields-button">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            <!-- END Additional User Information Form -->
+
+        </div>
+    </section>
+
+</div>
+<!-- end USER INFORMATION tab -->
