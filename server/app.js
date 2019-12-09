@@ -57,7 +57,7 @@ const DIST_DIR = path.normalize( `${__dirname}/..` );
 
 const STATIC_MIDDLEWARE = express.static( 'dist' );
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 const { SESS_NAME, SESS_SECRET, SESS_LIFETIME } = require( './config/server.config' );
 
