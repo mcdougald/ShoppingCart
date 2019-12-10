@@ -16,14 +16,19 @@
         "promise",
         "jasmine",
         "chai-friendly",
-        "mocha"
+        "mocha",
+        "flowtype"
     ],
     "extends": [
         "airbnb-base",
         "jquery",
         "plugin:node/recommended",
         "plugin:chai-friendly/recommended",
-        "plugin:mocha/recommended"
+        "plugin:mocha/recommended",
+        "plugin:flowtype/recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint"
     ],
     "globals": {
         "Atomics": "readonly",
