@@ -1,13 +1,14 @@
 import React from 'react';
 // import logo from '../assets/images/logo.svg';
-import './App.css';
+import './App.scss';
+
+import { Navigation } from '../navigation/navigation'
 
 class App extends React.Component {
   render() {
-    const message = `This is the App Component.`;
     return (
       <div className="App">
-        {message}
+        <Navigation />
       </div>
       );
     }

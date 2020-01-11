@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './components/app/App';
 import * as serviceWorker from './serviceWorker';
+
+// This is the JavaScript Entry Point. ReactDOM.render call lives here, we're
+// rendering the Application component, which I haven't fully written yet.
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
