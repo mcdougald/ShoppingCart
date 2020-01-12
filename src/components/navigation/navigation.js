@@ -13,29 +13,50 @@ const Navigation = () => {
       <div className='top-bar'>
           <h1>Store Name</h1>
         <nav className={styles.navbar}>
-            <ul className='navbar_column__left'>
+            <ul className={styles.navbar__column_left}>
               <li className='nav-item'>
-                  <NavLink to='/' exact className={styles.navbar__link}>
+                  <NavLink
+                    to='/'
+                    exact
+                    className={styles.navbar__link}
+                    activeClassName={styles.active}
+                  >
                     Home
                   </NavLink>
               </li>
               <li className='nav-item'>
-                  <NavLink className={styles.navbar__link} to='/store'>
+                  <NavLink
+                    className={styles.navbar__link}
+                    to='/store'
+                    activeClassName={styles.active}
+                  >
                     Shop
                   </NavLink>
               </li>
               <li className='nav-item'>
-                  <NavLink className={styles.navbar__link} to='/checkout'>
+                  <NavLink
+                    className={styles.navbar__link}
+                    to='/checkout'
+                    activeClassName={styles.active}
+                  >
                     Checkout
                   </NavLink>
               </li>
             </ul>
-            <ul className='navbar_column__right'>
+            <ul className={styles.navbar__column_right}>
               <li className='nav-item'>
-                  <NavLink className={styles.navbar__link} to='/user'>Account</NavLink>
+                  <NavLink
+                    className={styles.navbar__link}
+                    to='/user'
+                    activeClassName={styles.active}
+                  >Account</NavLink>
               </li>
               <li className='nav-item'>
-                  <NavLink className={styles.navbar__link} to='/logout'>Logout</NavLink>
+                  <NavLink
+                    className={styles.navbar__link}
+                    to='/logout'
+                    activeClassName={styles.active}
+                  >Logout</NavLink>
               </li>
             </ul>
         </nav>
