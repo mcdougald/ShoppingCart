@@ -1,26 +1,21 @@
-//.NavigationLink {
-//  color: #332463;
-//  font-size: 30px;
-//  text-decoration: none;
-//}
-
 h1 {
   /* em is relative to font-size of the ELEMENT*/
   font-size: 4em;
   margin: 1rem 0 0 0;
   color: #332463;
   font-family: Arial, fantasy;
+  text-align: center;
 }
 
 h2 {
   text-align: center;
 }
 
-.active {
-  color: #8b81ae;
-  font-weight: 600;
-  text-shadow: 0 0 8px rgba(179, 165, 244, 1);
-}
+//.active {
+//  color: #8b81ae;
+//  font-weight: 600;
+//  text-shadow: 0 0 8px rgba(179, 165, 244, 1);
+//}
 
 .navbar {
   display: flex;
@@ -31,12 +26,12 @@ h2 {
   &__column {
     display: flex;
 
-    &_right {
+    &--right {
       @extend .navbar__column;
       padding: 0 5rem 0 0;
     }
 
-    &_left {
+    &--left {
       @extend .navbar__column;
       padding: 0 0 0 5rem;
     }
@@ -49,13 +44,20 @@ h2 {
     text-decoration: none;
     /* rem is relative to ROOT Font-size */
     padding: 0 1rem 0 0.5rem;
+
+    &:hover {
+      color: #7d6d84;
+      font-weight: 600;
+      -ms-transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+      transform: scale(1.05);
+    }
+
+    &--active {
+      color: #8b81ae;
+      font-weight: 600;
+      text-shadow: 0 0 8px rgba(179, 165, 244, 1);
+    }
   }
 
-  &__link:hover {
-    color: #7d6d84;
-    font-weight: 600;
-    -ms-transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-  }
 }

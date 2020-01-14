@@ -1,16 +1,16 @@
 import React from 'react';
 // import logo from '../assets/images/logo.svg';
 import './App.scss';
-import '../navigation/navigation.module.scss'
+import '../header/header.module.scss'
 
-import { Navigation } from '../navigation/navigation'
+import { Header } from '../header/header'
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <Navigation />
-      </div>
+      <header>
+        <Header />
+      </header>
       );
     }
   }
