@@ -2,10 +2,10 @@ import React from 'react'
 import { NavLink, BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import styles from './header.module.scss';
-import { Home } from '../../pages/home/home'
-import { ShoppingCart as Shop } from '../../pages/shopping-cart/shopping-cart'
-import { Checkout } from '../../pages/checkout/checkout'
-import Account from '../user/information/information'
+import { Home } from '../../../pages/home/home'
+import { ShoppingCart as Shop } from '../../../pages/shopping-cart/shopping-cart'
+import { Checkout } from '../../../pages/checkout/checkout'
+import Account from '../../user/information/information'
 
 const Header = () => {
   return (
