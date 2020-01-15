@@ -5,7 +5,7 @@ import styles from './header.module.scss';
 import { Home } from '../../pages/home/home'
 import { ShoppingCart as Shop } from '../../pages/shopping-cart/shopping-cart'
 import { Checkout } from '../../pages/checkout/checkout'
-import { UserInformationForm as Account } from '../user/information/information'
+import Account from '../user/information/information'
 
 const Header = () => {
   return (
@@ -73,4 +73,4 @@ const Header = () => {
 
 
 
-export { Header };
+export default Header;

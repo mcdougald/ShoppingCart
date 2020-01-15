@@ -82,4 +82,4 @@ class UserInformationForm extends React.Component {
 
 
 
-export { UserInformationForm };
+export default UserInformationForm;
