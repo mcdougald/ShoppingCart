@@ -12,7 +12,7 @@ const Header = () => {
     <Router>
       <div className='top-bar'>
           <h1>Store Name</h1>
-        <nav className={styles.navbar}>
+        <nav className={'navbar'}>
             <ul className='navbar__column--left'>
               <li className='nav-item'>
                   <NavLink

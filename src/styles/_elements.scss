@@ -1,0 +1,16 @@
+.form-container {
+  background-color: #f5f2ff;
+  -webkit-box-shadow: 0 0 6px 1px #332463;
+  box-shadow: 0 0 6px 1px #332463;
+  border-radius: 5px;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 7rem auto;
+  text-align: center;
+  width: fit-content;
+}
