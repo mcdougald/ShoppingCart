@@ -120,6 +120,18 @@ class UserInformationForm extends React.Component {
               />
             </div>
           </form>
+          <button
+            className='save-button'
+            onClick={this.saveFields}
+          >
+            Save
+          </button>
+          <button
+            className='reset-fields-button'
+            onClick={this.resetFields}
+          >
+            Reset
+          </button>
         </div>
       </div>
     );
