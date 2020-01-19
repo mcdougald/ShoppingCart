@@ -29,7 +29,7 @@ class UserInformationForm extends React.Component {
     return (
       <div className="row">
         <div className="form-container">
-          <h2>User Information Page</h2>
+          <h2>Account Information</h2>
           <form id='form' onSubmit={this.handleSubmit.bind( this )} method="POST">
             <div className="formGroup">
               <label htmlFor='firstName'>First Name</label>
