@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 class UserInformationForm extends React.Component {
   constructor(props) {
@@ -136,9 +138,11 @@ class UserInformationForm extends React.Component {
       </div>
     );
   }
-
-
 }
+
+UserInformationForm.propTypes = {
+
+};
 
 
 
