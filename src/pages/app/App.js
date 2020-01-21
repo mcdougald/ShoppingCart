@@ -1,9 +1,9 @@
 import React from 'react';
 // import logo from '../assets/images/logo.svg';
 import './App.scss';
-import '../../components/navigation/header/header.module.scss'
+import '../../components/Navigation/header/header.module.scss'
 
-import Header from '../../components/navigation/header/header'
+import Header from '../../components/Navigation/header/header'
 
 class App extends React.Component {
   render() {

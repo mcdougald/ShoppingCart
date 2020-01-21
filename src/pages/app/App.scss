@@ -3,7 +3,8 @@
 @import '../../styles/variables';
 
 
-@import '../../components/navigation/header/header.module';
+@import '../../components/Navigation/header/header.module';
+@import '../../components/User/information/information.module';
 
 .App {
   text-align: center;

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Panel = () => {
+const Panel = (props) => {
   return (
-    <div className="panel">
+    <div className={props.panelName + "-panel"}>
 
     </div>
   );

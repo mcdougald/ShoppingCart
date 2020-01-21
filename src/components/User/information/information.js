@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './information.module.scss'
 
 class UserInformationForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
+  state = {
+    user: {
       firstName: '',
       lastName: '',
       phone: '',
@@ -16,11 +15,15 @@ class UserInformationForm extends React.Component {
       city: '',
       state: '',
       zipcode: ''
-    }
-  }
+    },
+    submitted: false
+  };
 
   handleChange = (event) => {
-    this.setState({ value: event.target.value })
+    // I need to use setState immutably
+    const { user } = this.state;
+    user[event.target.name] = event.target.value;
+    this.setState({ user })
   };
 
   handleSubmit (event) {
@@ -122,18 +125,20 @@ class UserInformationForm extends React.Component {
               />
             </div>
           </form>
-          <button
-            className='save-button'
-            onClick={this.saveFields}
-          >
-            Save
-          </button>
-          <button
-            className='reset-fields-button'
-            onClick={this.resetFields}
-          >
-            Reset
-          </button>
+          <div className='btn__group'>
+            <button
+              className='btn btn__save'
+              onClick={this.onSave}
+            >
+              Save
+            </button>
+            <button
+              className='btn btn__reset'
+              onClick={this.onReset}
+            >
+              Reset
+            </button>
+          </div>
         </div>
       </div>
     );
