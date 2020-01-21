@@ -1,3 +1,11 @@
+@import '../../styles/elements';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+
+@import '../../components/Navigation/header/header.module';
+@import '../../components/User/information/information.module';
+
 .App {
   text-align: center;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './components/app/App';
+import App from './pages/app/App';
 import * as serviceWorker from './serviceWorker';
 
 // This is the JavaScript Entry Point. ReactDOM.render call lives here, we're
