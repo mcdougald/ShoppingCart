@@ -4,13 +4,19 @@ import './App.scss';
 import '../../components/Navigation/header/header.module.scss'
 
 import Header from '../../components/Navigation/header/header'
+import Footer from '../../components/Navigation/footer/footer'
 
 class App extends React.Component {
   render() {
     return (
-      <header>
-        <Header />
-      </header>
+      <div className="App">
+        <header>
+          <Header/>
+        </header>
+        <footer>
+          <Footer/>
+        </footer>
+      </div>
       );
     }
   }
