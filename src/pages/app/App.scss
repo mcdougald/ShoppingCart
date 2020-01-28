@@ -5,9 +5,12 @@
 
 @import '../../components/Navigation/header/header.module';
 @import '../../components/User/information/information.module';
+@import '../../components/Navigation/footer/footer.module';
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column
 }
 
 .App-logo {

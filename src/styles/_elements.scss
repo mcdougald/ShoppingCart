@@ -13,4 +13,10 @@
   margin: 7rem auto;
   text-align: center;
   width: fit-content;
+  padding: 1rem;
+}
+
+.row {
+  min-height: 100%;
+  z-index: 20;
 }
