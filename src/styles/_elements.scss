@@ -17,6 +17,10 @@
 }
 
 .row {
-  min-height: 100%;
+  z-index: 20;
+}
+
+.container {
+  min-height: 95vh;
   z-index: 20;
 }

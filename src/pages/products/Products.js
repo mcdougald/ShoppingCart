@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShoppingCart = () => {
+const Products = () => {
   return (
     <div className="row">
       <h2>Shopping Page</h2>
@@ -8,4 +8,4 @@ const ShoppingCart = () => {
   );
 };
 
-export { ShoppingCart };
+export { Products };

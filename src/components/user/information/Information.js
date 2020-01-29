@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './information.module.scss'
+import './Information.module.scss'
 
 class UserInformationForm extends React.Component {
   state = {
