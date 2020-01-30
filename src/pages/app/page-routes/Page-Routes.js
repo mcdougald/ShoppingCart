@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 
-import { Home } from '../home/Home';
-import { Products as Shop } from '../products/Products';
-import { Checkout } from '../checkout/Checkout';
-import Account from '../../components/user/information/Information';
-import NotFound from '../not-found/Not-Found';
+import { Home } from '../../home/Home';
+import { Shop as Shop } from '../../shop/Shop';
+import { Checkout } from '../../checkout/Checkout';
+import Account from '../../users/information/Information';
+import NotFound from '../../not-found/Not-Found';
 
 const PageRoutes = () => {
   return (

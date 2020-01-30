@@ -6,7 +6,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 
 import Header from '../../components/navigation/header/Header'
 import Footer from '../../components/navigation/footer/Footer'
-import PageRoutes from '../page-routes/Page-Routes'
+import PageRoutes from './page-routes/Page-Routes'
 
 class App extends React.Component {
   render() {
