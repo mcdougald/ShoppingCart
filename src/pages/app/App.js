@@ -1,16 +1,27 @@
 import React from 'react';
 // import logo from '../assets/images/logo.svg';
 import './App.scss';
-import '../../components/Navigation/header/header.module.scss'
+import '../../components/navigation/header/Header.module.scss'
+import {BrowserRouter as Router} from 'react-router-dom';
 
-import Header from '../../components/Navigation/header/header'
+import Header from '../../components/navigation/header/Header'
+import Footer from '../../components/navigation/footer/Footer'
+import PageRoutes from './page-routes/Page-Routes'
 
 class App extends React.Component {
   render() {
     return (
-      <header>
-        <Header />
-      </header>
+      <Router>
+        <header>
+          <Header/>
+        </header>
+        <body>
+          <PageRoutes/>
+        </body>
+        <footer>
+          <Footer/>
+        </footer>
+      </Router>
       );
     }
   }

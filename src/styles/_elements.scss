@@ -13,4 +13,14 @@
   margin: 7rem auto;
   text-align: center;
   width: fit-content;
+  padding: 1rem;
+}
+
+.row {
+  z-index: 20;
+}
+
+.container {
+  min-height: 95vh;
+  z-index: 20;
 }

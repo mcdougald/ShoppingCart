@@ -3,17 +3,17 @@
 @import '../../styles/variables';
 
 
-@import '../../components/Navigation/header/header.module';
-@import '../../components/User/information/information.module';
+@import '../../components/navigation/header/header.module';
+@import '../users/information/information.module';
+@import '../../components/navigation/footer/footer.module';
 
 .App {
+  height: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
