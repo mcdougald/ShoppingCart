@@ -1,5 +1,8 @@
 import React from "react";
+import Select from "react-select";
 import PropTypes from "prop-types";
+
+import { LOCATION_OPTIONS } from "../../../config/locations";
 
 import "./Information.module.scss";
 
@@ -23,6 +26,12 @@ class UserInformationForm extends React.Component {
     // I need to use setState immutably
     const { user } = this.state;
     user[event.target.name] = event.target.value;
+    this.setState({ user });
+  };
+
+  handleSelectChange = selectedOption => {
+    const { user } = this.state;
+    user["state"] = selectedOption;
     this.setState({ user });
   };
 
@@ -113,6 +122,23 @@ class UserInformationForm extends React.Component {
                 // value={this.state.city}
               />
             </div>
+
+            <div className="formGroup">
+              <Select
+                options={LOCATION_OPTIONS.map(state => ({
+                  ...state,
+                  label: state.name,
+                  value: state.abbreviation
+                }))}
+                className="state-select-container"
+                classNamePrefix="state-select"
+                value={this.state.state}
+                id="state"
+                placeholder="State"
+                onChange={this.handleSelectChange}
+              />
+            </div>
+
             <div className="formGroup">
               <label htmlFor="zipcode">Zip Code</label>
               <input
