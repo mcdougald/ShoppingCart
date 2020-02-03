@@ -10,16 +10,131 @@ import "./Information.module.scss";
 
 class UserInformationForm extends React.Component {
   state = {
-    user: {
-      firstName: "",
-      lastName: "",
-      phone: "",
-      email: "",
-      addressLine1: "",
-      addressLine2: "",
-      city: "",
-      state: "",
-      zipcode: ""
+    accountInformationForm: {
+      firstName: {
+        type: 'input',
+        formConfig: {
+          name: 'first-name',
+          type: 'text',
+          placeholder: 'First'
+        },
+        value: '',
+        validity: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      },
+      lastName: {
+        type: 'input',
+        formConfig: {
+          name: 'last-name',
+          type: 'text',
+          placeholder: 'Last'
+        },
+        value: '',
+        validity: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      },
+      phone: {
+        type: 'input',
+        formConfig: {
+          name: 'phone',
+          type: 'tel',
+          placeholder: 'Primary Phone'
+        },
+        value: '',
+        validity: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      },
+      email: {
+        type: 'input',
+        formConfig: {
+          name: 'email',
+          type: 'email',
+          placeholder: 'Email'
+        },
+        value: '',
+        validity: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      },
+      addressLine1: {
+        type: 'input',
+        formConfig: {
+          name: 'address-line-1',
+          type: 'text',
+          placeholder: 'Street Address'
+        },
+        value: '',
+        validity: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      },
+      addressLine2: {
+        type: 'input',
+        formConfig: {
+          name: 'address-line-2',
+          type: 'text',
+          placeholder: 'Apt, Suite, Bldg'
+        },
+        value: '',
+        validity: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      },
+      city: {
+        type: 'input',
+        formConfig: {
+          name: 'city',
+          type: 'text',
+          placeholder: 'City'
+        },
+        value: '',
+        validity: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      },
+      state: {
+        type: 'select',
+        formConfig: {
+          options: LOCATION_OPTIONS
+        },
+        value: '',
+        validity: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      },
+      zipcode: {
+        type: 'input',
+        formConfig: {
+          name: 'zipcode',
+          type: 'text',
+          placeholder: 'Zip Code'
+        },
+        value: '',
+        validity: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      }
     },
     submitted: false
   };
