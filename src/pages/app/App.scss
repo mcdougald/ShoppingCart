@@ -3,9 +3,9 @@
 @import '../../styles/variables';
 
 
-@import '../../components/navigation/header/header.module';
-@import '../users/information/information.module';
-@import '../../components/navigation/footer/footer.module';
+@import '../../components/navigation/header/Header.module.css';
+@import '../users/information/Information.module.css';
+@import '../../components/navigation/footer/Footer.module.css';
 
 .App {
   height: 100%;
