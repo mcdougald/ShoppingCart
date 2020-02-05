@@ -1,6 +1,7 @@
 import React from "react";
 import Select from "react-select";
 import PropTypes from "prop-types";
+import Input from "../../../components/UI/input/Input";
 
 import { LOCATION_OPTIONS } from "../../../config/locations";
 
@@ -13,124 +14,142 @@ class UserInformationForm extends React.Component {
     accountInformationForm: {
       firstName: {
         type: 'input',
-        formConfig: {
-          name: 'first-name',
+        label: null,
+        fieldConfig: {
+          name: 'First Name',
           type: 'text',
           placeholder: 'First'
         },
         value: '',
         validity: {
-          required: true
+          required: true,
+          pattern: /^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i
         },
         valid: false,
         touched: false
       },
       lastName: {
         type: 'input',
-        formConfig: {
-          name: 'last-name',
+        label: null,
+        fieldConfig: {
+          name: 'Last Name',
           type: 'text',
           placeholder: 'Last'
         },
         value: '',
         validity: {
-          required: true
+          required: true,
+          pattern: /^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i
         },
         valid: false,
         touched: false
       },
       phone: {
         type: 'input',
-        formConfig: {
-          name: 'phone',
+        label: null,
+        fieldConfig: {
+          name: 'Phone',
           type: 'tel',
           placeholder: 'Primary Phone'
         },
         value: '',
         validity: {
-          required: true
+          required: true,
+          pattern: /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im
         },
         valid: false,
         touched: false
       },
       email: {
         type: 'input',
-        formConfig: {
-          name: 'email',
+        label: null,
+        fieldConfig: {
+          name: 'Email',
           type: 'email',
           placeholder: 'Email'
         },
         value: '',
         validity: {
-          required: true
+          required: true,
+          pattern: /\S+@\S+\.\S+/
         },
         valid: false,
         touched: false
       },
       addressLine1: {
         type: 'input',
-        formConfig: {
-          name: 'address-line-1',
+        label: 'Address Line 1:',
+        fieldConfig: {
+          name: 'Address 1',
           type: 'text',
           placeholder: 'Street Address'
         },
         value: '',
         validity: {
-          required: true
+          required: true,
+          pattern: /^\s*\S+(?:\s+\S+){2}/
         },
         valid: false,
         touched: false
       },
       addressLine2: {
         type: 'input',
-        formConfig: {
-          name: 'address-line-2',
+        label: 'Address Line 2:',
+        fieldConfig: {
+          name: 'Address 2',
           type: 'text',
           placeholder: 'Apt, Suite, Bldg'
         },
         value: '',
         validity: {
-          required: true
+          pattern: /^[a-zA-Z0-9\s,.'-]{3,}$/
         },
         valid: false,
         touched: false
       },
       city: {
         type: 'input',
-        formConfig: {
-          name: 'city',
+        label: 'City:',
+        fieldConfig: {
+          name: 'City',
           type: 'text',
           placeholder: 'City'
         },
         value: '',
         validity: {
-          required: true
+          required: true,
+          pattern: /^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$/
         },
         valid: false,
         touched: false
       },
       state: {
         type: 'select',
-        formConfig: {
+        label: 'State:',
+        fieldConfig: {
           options: LOCATION_OPTIONS
         },
         value: '',
+        selected: 'State',
         validity: {
-          required: true
+          required: true,
+          pattern: /^[.]/
         },
         valid: false,
         touched: false
       },
       zipcode: {
         type: 'input',
-        formConfig: {
-          name: 'zipcode',
+        label: 'Zip Code:',
+        fieldConfig: {
+          name: 'Zip Code',
           type: 'text',
           placeholder: 'Zip Code'
         },
         value: '',
         validity: {
-          required: true
+          required: true,
+          pattern: /(^\d{5}$)|(^\d{5}-\d{4}$)/
         },
         valid: false,
         touched: false
@@ -139,11 +158,40 @@ class UserInformationForm extends React.Component {
     submitted: false
   };
 
-  handleChange = event => {
-    // I need to use setState immutably
-    const { user } = this.state;
-    user[event.target.name] = event.target.value;
-    this.setState({ user });
+  checkValidity = (value, rules) => {
+    let isValid = false;
+
+    if (!rules) {
+      return true;
+    }
+
+    if (rules.required) {
+      isValid = ( (value.trim() !== '') && rules.pattern.test(value) )
+    } else {
+      isValid = ( (value.trim() === '') || rules.pattern.test(value) )
+    }
+    return isValid;
+  };
+
+  // Each input element is updated as it's typed into
+  handleChange = (event, id) => {
+    // Copy the initial form state using spread operator
+    const formCopy = {
+      ...this.state.accountInformationForm
+    };
+
+    // Use the fieldElement.id passed into handler to get
+    // the properties of the input element which is under focus.
+    const formElement = {...formCopy[id]};
+    // Change value property alone to event.target.value
+    formElement.value = event.target.value;
+    formElement.selected = event.target.value;
+
+    formElement.valid = this.checkValidity(formElement.value, formElement.validity);
+    formElement.touched = true;
+    // immutably update the state
+    formCopy[id] = formElement;
+    this.setState({ accountInformationForm: formCopy });
   };
 
   handleSelectChange = selectedOption => {
@@ -157,12 +205,53 @@ class UserInformationForm extends React.Component {
   }
 
   render() {
+    const inputArray = [];
+    for (const key in this.state.accountInformationForm) {
+      inputArray.push({
+        id: key,
+        inputData: this.state.accountInformationForm[key]
+      })
+    }
+
     return (
       <div className="row">
         <Panel panelName={'account-overview'}>
           <div className="form-container">
-            <h2>Account Information</h2>
-            <form id="form" onSubmit={this.handleSubmit.bind( this )} method="POST">
+            <h2>Finish Registering!</h2>
+            <form className='form' id="form" onSubmit={this.handleSubmit.bind( this )} method="POST">
+              {inputArray.map(fieldElement => (
+                  <Input
+                  key={fieldElement.id}
+                  touched={fieldElement.inputData.touched}
+                  check={fieldElement.inputData.validity}
+                  valid={!fieldElement.inputData.valid}
+                  changed={( event ) => this.handleChange( event, fieldElement.id )}
+                  value={fieldElement.inputData.value}
+                  fieldConfig={fieldElement.inputData.fieldConfig}
+                  inputType={fieldElement.inputData.type}
+                  label={fieldElement.inputData.label}
+                />
+              ))}
+            </form>
+            <div className="btn__group">
+              <button className="btn btn__save" onClick={this.onSave}>
+                Save
+              </button>
+              <button className="btn btn__reset" onClick={this.onReset}>
+                Reset
+              </button>
+            </div>
+          </div>
+        </Panel>
+      </div>
+    );
+  }
+}
+
+UserInformationForm.propTypes = {};
+
+export default UserInformationForm;
+/*
               <div className="formGroup">
                 <label htmlFor="firstName">First Name</label>
                 <input
@@ -268,22 +357,4 @@ class UserInformationForm extends React.Component {
                   // value={this.state.zipcode}
                 />
               </div>
-            </form>
-            <div className="btn__group">
-              <button className="btn btn__save" onClick={this.onSave}>
-                Save
-              </button>
-              <button className="btn btn__reset" onClick={this.onReset}>
-                Reset
-              </button>
-            </div>
-          </div>
-        </Panel>
-      </div>
-    );
-  }
-}
-
-UserInformationForm.propTypes = {};
-
-export default UserInformationForm;
+ */

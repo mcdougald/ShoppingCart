@@ -1,0 +1,59 @@
+.field-element {
+  padding: 0.2rem 0.1rem;
+  margin: 8px 0 4px 0;
+
+  &__input-field {
+    background-color: #f2f3f4;
+    border: 2px solid #151a2f;
+    border-radius: 8px;
+    outline: none;
+    position: relative;
+    -o-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+
+    &:focus {
+      background-color: #f2f3f4;
+      border: 2px solid #c1b5e4;
+      border-radius: 8px;
+    }
+  }
+
+  &__input-field--input {
+    @extend .field-element__input-field;
+  }
+
+  &__input-field--select {
+    @extend .field-element__input-field;
+
+    option:focus {
+      content: attr(data-descr);
+    }
+  }
+
+  //input, select {
+  //  background-color: #f2f3f4;
+  //  border: 2px solid #151a2f;
+  //  border-radius: 8px;
+  //  outline: none;
+  //  position: relative;
+  //  -o-transition: 0.2s;
+  //  -webkit-transition: 0.2s;
+  //  transition: 0.2s;
+  //
+  //  &:focus {
+  //    background-color: #f2f3f4;
+  //    border: 2px solid #c1b5e4;
+  //    border-radius: 8px;
+  //  }
+
+
+
+  //input:focus, select:focus {
+  //  background-color: #f2f3f4;
+  //  border: 2px solid #c1b5e4;
+  //  border-radius: 8px;
+  //}
+
+}
+
