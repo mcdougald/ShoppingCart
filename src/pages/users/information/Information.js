@@ -15,7 +15,7 @@ class UserInformationForm extends React.Component {
       firstName: {
         type: 'input',
         label: null,
-        gridAreaLocation: 'firstName',
+        gridAreaLocation: '1 / 1 / span 1 / span 2',
         fieldConfig: {
           name: 'First Name',
           type: 'text',
@@ -32,7 +32,7 @@ class UserInformationForm extends React.Component {
       lastName: {
         type: 'input',
         label: null,
-        gridAreaLocation: 'lastName',
+        gridAreaLocation: '1 / 3 / span 1 / span 3',
         fieldConfig: {
           name: 'Last Name',
           type: 'text',
@@ -49,7 +49,7 @@ class UserInformationForm extends React.Component {
       phone: {
         type: 'input',
         label: null,
-        gridAreaLocation: 'phone',
+        gridAreaLocation: '2 / 1 / span 1 / span 2',
         fieldConfig: {
           name: 'Phone',
           type: 'tel',
@@ -65,7 +65,7 @@ class UserInformationForm extends React.Component {
       },
       email: {
         type: 'input',
-        gridAreaLocation: 'email',
+        gridAreaLocation: '2 / 3 / span 1 / span 3',
         label: null,
         fieldConfig: {
           name: 'Email',
@@ -83,7 +83,7 @@ class UserInformationForm extends React.Component {
       addressLine1: {
         type: 'input',
         label: 'Address Line 1:',
-        gridAreaLocation: 'addressLine1',
+        gridAreaLocation: '3 / 1 / span 1 / span 5',
         fieldConfig: {
           name: 'Address 1',
           type: 'text',
@@ -100,7 +100,7 @@ class UserInformationForm extends React.Component {
       addressLine2: {
         type: 'input',
         label: 'Address Line 2:',
-        gridAreaLocation: 'addressLine2',
+        gridAreaLocation: '4 / 1 / span 1 / span 5',
         fieldConfig: {
           name: 'Address 2',
           type: 'text',
@@ -116,7 +116,7 @@ class UserInformationForm extends React.Component {
       city: {
         type: 'input',
         label: 'City:',
-        gridAreaLocation: 'city',
+        gridAreaLocation: '5 / 1 / span 1 / span 2',
         fieldConfig: {
           name: 'City',
           type: 'text',
@@ -133,7 +133,7 @@ class UserInformationForm extends React.Component {
       state: {
         type: 'select',
         label: 'State:',
-        gridAreaLocation: 'state',
+        gridAreaLocation: '5 / 3 / span 1 / span 2',
         fieldConfig: {
           options: LOCATION_OPTIONS
         },
@@ -148,7 +148,7 @@ class UserInformationForm extends React.Component {
       zipcode: {
         type: 'input',
         label: 'Zip Code:',
-        gridAreaLocation: 'zipcode',
+        gridAreaLocation: '5 / 5 / span 1 / span 1',
         fieldConfig: {
           name: 'Zip Code',
           type: 'text',

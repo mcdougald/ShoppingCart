@@ -20,13 +20,20 @@
   form {
     grid-area: content;
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
-    grid-template-areas:
-            "firstName . lastName"
-            "phone . email"
-            "addressLine1 addressLine1 addressLine1"
-            "addressLine2 addressLine2 addressLine2"
-            "city state zipcode";
+    //grid-template-columns: 1fr 2fr 2fr;
+    //grid-template-areas:
+    //        "firstName . lastName"
+    //        "phone . email"
+    //        "addressLine1 addressLine1 addressLine1"
+    //        "addressLine2 addressLine2 addressLine2"
+    //        "city state zipcode";
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    //grid-template-areas:
+    //        "names"
+    //        "contact"
+    //        "addressLine1"
+    //        "addressLine2"
+    //        "location";
 
   }
 
