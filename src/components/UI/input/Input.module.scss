@@ -1,6 +1,7 @@
 .field-element {
   padding: 0.2rem 0.1rem;
   margin: 8px 0 4px 0;
+  width: fit-content;
 
   &__input-field {
     background-color: #f2f3f4;
@@ -11,6 +12,7 @@
     -o-transition: 0.2s;
     -webkit-transition: 0.2s;
     transition: 0.2s;
+    padding: .2rem .5rem;
 
     &:focus {
       background-color: #f2f3f4;
@@ -25,8 +27,9 @@
 
   &__input-field--select {
     @extend .field-element__input-field;
+    max-width: 70%;
 
-    option:focus {
+    option::after {
       content: attr(data-descr);
     }
   }

@@ -8,6 +8,9 @@ then you pass the normal attributes you would pass to that HTML element
 const Input = props => {
   let inputElement = null;
   let inputClassName = `field-element__input-field--${props.inputType}`;
+  let inputStyleLayout = {
+    gridArea: props.gridAreaLocation
+  };
 
   switch (props.inputType) {
     case "input":
@@ -28,18 +31,22 @@ const Input = props => {
     case "select":
       inputElement = (
         <React.Fragment>
-          <select value={props.value} className={inputClassName} onChange={props.changed}>
+          <select
+            value={props.value}
+            className={inputClassName}
+            onChange={props.changed}
+          >
             <option value="" selected="selected">
-              {props.selected}
+              State
             </option>
             {props.fieldConfig.options.map(option => (
               <option
                 key={option.abbreviation}
                 value={option.name}
-                title={option.name}
+                title={option.abbreviation}
                 data-descr={option.name}
               >
-                {option.abbreviation}
+                {option.name}
               </option>
             ))}
           </select>
@@ -60,7 +67,10 @@ const Input = props => {
   if (props.label !== null) {
     return (
       <React.Fragment>
-        <div className="field-element">
+        <div
+          className={"field-element field-element-" + props.id}
+          style={inputStyleLayout}
+        >
           <label>{props.label}</label>
           {inputElement}
         </div>
@@ -69,7 +79,11 @@ const Input = props => {
   } else {
     return (
       <React.Fragment>
-        <div className="field-element">{inputElement}</div>
+        <div
+          className={"field-element field-element-" + props.id}
+          style={inputStyleLayout}
+        >
+          {inputElement}</div>
       </React.Fragment>
     );
   }

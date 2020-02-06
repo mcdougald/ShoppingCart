@@ -15,10 +15,11 @@ class UserInformationForm extends React.Component {
       firstName: {
         type: 'input',
         label: null,
+        gridAreaLocation: 'firstName',
         fieldConfig: {
           name: 'First Name',
           type: 'text',
-          placeholder: 'First'
+          placeholder: 'First Name'
         },
         value: '',
         validity: {
@@ -31,10 +32,11 @@ class UserInformationForm extends React.Component {
       lastName: {
         type: 'input',
         label: null,
+        gridAreaLocation: 'lastName',
         fieldConfig: {
           name: 'Last Name',
           type: 'text',
-          placeholder: 'Last'
+          placeholder: 'Last Name'
         },
         value: '',
         validity: {
@@ -47,6 +49,7 @@ class UserInformationForm extends React.Component {
       phone: {
         type: 'input',
         label: null,
+        gridAreaLocation: 'phone',
         fieldConfig: {
           name: 'Phone',
           type: 'tel',
@@ -62,6 +65,7 @@ class UserInformationForm extends React.Component {
       },
       email: {
         type: 'input',
+        gridAreaLocation: 'email',
         label: null,
         fieldConfig: {
           name: 'Email',
@@ -79,6 +83,7 @@ class UserInformationForm extends React.Component {
       addressLine1: {
         type: 'input',
         label: 'Address Line 1:',
+        gridAreaLocation: 'addressLine1',
         fieldConfig: {
           name: 'Address 1',
           type: 'text',
@@ -95,6 +100,7 @@ class UserInformationForm extends React.Component {
       addressLine2: {
         type: 'input',
         label: 'Address Line 2:',
+        gridAreaLocation: 'addressLine2',
         fieldConfig: {
           name: 'Address 2',
           type: 'text',
@@ -110,6 +116,7 @@ class UserInformationForm extends React.Component {
       city: {
         type: 'input',
         label: 'City:',
+        gridAreaLocation: 'city',
         fieldConfig: {
           name: 'City',
           type: 'text',
@@ -126,11 +133,11 @@ class UserInformationForm extends React.Component {
       state: {
         type: 'select',
         label: 'State:',
+        gridAreaLocation: 'state',
         fieldConfig: {
           options: LOCATION_OPTIONS
         },
         value: '',
-        selected: 'State',
         validity: {
           required: true,
           pattern: /^[.]/
@@ -141,6 +148,7 @@ class UserInformationForm extends React.Component {
       zipcode: {
         type: 'input',
         label: 'Zip Code:',
+        gridAreaLocation: 'zipcode',
         fieldConfig: {
           name: 'Zip Code',
           type: 'text',
@@ -185,7 +193,6 @@ class UserInformationForm extends React.Component {
     const formElement = {...formCopy[id]};
     // Change value property alone to event.target.value
     formElement.value = event.target.value;
-    formElement.selected = event.target.value;
 
     formElement.valid = this.checkValidity(formElement.value, formElement.validity);
     formElement.touched = true;
@@ -222,7 +229,9 @@ class UserInformationForm extends React.Component {
               {inputArray.map(fieldElement => (
                   <Input
                   key={fieldElement.id}
+                  id={fieldElement.id}
                   touched={fieldElement.inputData.touched}
+                  gridAreaLocation={fieldElement.inputData.gridAreaLocation}
                   check={fieldElement.inputData.validity}
                   valid={!fieldElement.inputData.valid}
                   changed={( event ) => this.handleChange( event, fieldElement.id )}
@@ -233,11 +242,11 @@ class UserInformationForm extends React.Component {
                 />
               ))}
             </form>
-            <div className="btn__group">
-              <button className="btn btn__save" onClick={this.onSave}>
+            <div className="form-container__col-3 btn-grp">
+              <button className="btn btn--save" onClick={this.onSave}>
                 Save
               </button>
-              <button className="btn btn__reset" onClick={this.onReset}>
+              <button className="btn btn--reset" onClick={this.onReset}>
                 Reset
               </button>
             </div>

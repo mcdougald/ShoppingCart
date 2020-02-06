@@ -1,7 +1,20 @@
 .panel {
-  min-height: 100%;
-  position: relative;
+  background-color: #f5f2ff;
+  -webkit-box-shadow: 0 0 6px 1px #332463;
+  box-shadow: 0 0 6px 1px #332463;
+  border-radius: 5px;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  min-width: 100%;
-  padding: 25%;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  &--account-overview {
+    @extend .panel;
+    width: 35%;
+    margin: 3rem auto;
+
+  }
 }

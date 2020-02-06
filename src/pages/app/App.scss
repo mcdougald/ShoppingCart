@@ -3,10 +3,11 @@
 @import '../../styles/variables';
 
 
-@import '../../components/navigation/header/Header.module.css';
-@import '../users/information/Information.module.css';
-@import '../../components/navigation/footer/Footer.module.css';
-@import '../../components/UI/input/Input.module.css';
+@import '../../components/navigation/header/Header.module';
+@import '../users/information/Information.module';
+@import '../../components/navigation/footer/Footer.module';
+@import '../../components/UI/input/Input.module';
+@import '../../components/panel/Panel.module';
 
 .App {
   height: 100%;
