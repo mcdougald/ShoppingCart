@@ -53,16 +53,15 @@
 
 .btn {
   text-transform: uppercase;
-  width: 30%;
+  margin: 3em 2em;
+}
 
-  &--save {
-    margin: 1rem 1rem 1rem 4rem
+.btn--save {
+  @extend .btn;
+}
 
-  }
-
-  &--reset {
-
-  }
+.btn--reset {
+  @extend .btn;
 }
 
 

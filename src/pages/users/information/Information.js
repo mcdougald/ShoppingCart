@@ -224,7 +224,7 @@ class UserInformationForm extends React.Component {
       <div className="row">
         <Panel panelName={'account-overview'}>
           <div className="form-container">
-            <h2>Finish Registering!</h2>
+            <h2 className="weight-bold">Finish Registering!</h2>
             <form className='form' id="form" onSubmit={this.handleSubmit.bind( this )} method="POST">
               {inputArray.map(fieldElement => (
                   <Input
@@ -242,13 +242,17 @@ class UserInformationForm extends React.Component {
                 />
               ))}
             </form>
-            <div className="form-container__col-3 btn-grp">
-              <button className="btn btn--save" onClick={this.onSave}>
-                Save
-              </button>
-              <button className="btn btn--reset" onClick={this.onReset}>
-                Reset
-              </button>
+            <div className="buttons is-grouped is-uppercase is-right form-container__col-3 btn-grp">
+              <p className="control">
+                <button disabled className="button is-medium is-marginless btn--save" onClick={this.onSave}>
+                  SAVE
+                </button>
+              </p>
+              <p className="control">
+                <button className="button is-medium is-marginless btn--reset" onClick={this.onReset}>
+                  RESET
+                </button>
+              </p>
             </div>
           </div>
         </Panel>

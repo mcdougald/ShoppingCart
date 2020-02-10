@@ -1,5 +1,10 @@
+@import '/../../styles/_variables.scss';
+
+
+$panel-shadow: 0 0.5em 1em -0.125em rgba($purple, 0.3), 0 0px 0 1px rgba($purple, 0.04);
+
 .panel {
-  background-color: #f5f2ff;
+  background-color: #F5F2FF;
   -webkit-box-shadow: 0 0 6px 1px #332463;
   box-shadow: 0 0 6px 1px #332463;
   border-radius: 5px;
@@ -13,7 +18,7 @@
 
   &--account-overview {
     @extend .panel;
-    width: 45%;
+    width: fit-content;
     margin: 3rem auto;
 
   }
