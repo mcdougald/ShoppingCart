@@ -1,11 +1,25 @@
+@charset "utf-8";
+
 @import '../../styles/elements';
 @import '../../styles/mixins';
 @import '../../styles/variables';
 
 
-@import '../../components/navigation/header/header.module';
-@import '../users/information/information.module';
-@import '../../components/navigation/footer/footer.module';
+@import '../../components/navigation/header/Header.module';
+@import '../users/information/Information.module';
+@import '../../components/navigation/footer/Footer.module';
+@import '../../components/UI/input/Input.module';
+@import '../../components/panel/Panel.module';
+
+@import '../../../node_modules/bulma/sass/utilities/_all.sass';
+@import '../../../node_modules/bulma/sass/base/_all.sass';
+@import '../../../node_modules/bulma/sass/elements/button.sass';
+@import '../../../node_modules/bulma/sass/elements/container.sass';
+@import '../../../node_modules/bulma/sass/form/_all.sass';
+@import '../../../node_modules/bulma/sass/elements/title.sass';
+@import '../../../node_modules/bulma/sass/components/_all.sass';
+@import '../../../node_modules/bulma/sass/layout/hero.sass';
+@import '../../../node_modules/bulma/sass/layout/section.sass';
 
 .App {
   height: 100%;

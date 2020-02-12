@@ -7,7 +7,7 @@ const Header = () => {
     <div className='header'>
       <div className='top-bar'>
         <h1>Store Name</h1>
-        <nav className={'navbar'}>
+        <nav className={'navbar is-background'}>
           <ul className='navbar__column--left'>
             <li className='nav-item'>
               <NavLink

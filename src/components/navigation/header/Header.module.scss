@@ -1,6 +1,11 @@
+@import '../../../styles/_variables.scss';
+
+$navbar-background-color: $body-background-color;
+
 h1 {
   /* em is relative to font-size of the ELEMENT*/
   font-size: 4em;
+  font-weight: 700;
   margin: 1rem 0 0 0;
   color: #332463;
   font-family: Arial, fantasy;

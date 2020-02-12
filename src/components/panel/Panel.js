@@ -2,8 +2,8 @@ import React from 'react'
 
 const Panel = (props) => {
   return (
-    <div className={props.panelName + "-panel"}>
-
+    <div className={"panel panel--" + props.panelName}>
+      {props.children}
     </div>
   );
 };
