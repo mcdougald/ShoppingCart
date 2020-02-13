@@ -1,0 +1,22 @@
+@import '../../../styles/variables';
+
+$menu-label-color: $dark-purple;
+$menu-label-font-size: 2em;
+$menu-item-active-color: $purple;
+$menu-item-active-background-color: $egg-white;
+$menu-list-line-height: 3rem;
+
+.sidebar {
+  margin: auto 3rem auto 0;
+
+  .menu-label {
+    text-align: center;
+    text-shadow: 0 0 4px #c1b5e4, 0 0 9px #c1b5e4, 0 0 9px #c1b5e4, 0 0 9px #c1b5e4;
+    font-weight: 600;
+  }
+
+  .sidebar__link {
+    font-size: 1.2em;
+  }
+
+}

@@ -4,7 +4,8 @@ import { Route, Switch } from 'react-router-dom'
 import { Home } from '../../home/Home';
 import { Shop } from '../../shop/Shop';
 import { Checkout } from '../../checkout/Checkout';
-import Account from '../../users/information/Information';
+import UserRoutes from '../../../components/user/user-routes/User-Routes';
+import Shipping from '../../users/shipping/Shipping';
 import NotFound from '../../not-found/Not-Found';
 
 const PageRoutes = () => {
@@ -17,8 +18,8 @@ const PageRoutes = () => {
         <Route path='/checkout'>
           <Checkout />
         </Route>
-        <Route path='/user'>
-          <Account />
+        <Route path='/user:id'>
+          <UserRoutes />
         </Route>
         <Route path='/' exact>
           <Home />

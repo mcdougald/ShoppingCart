@@ -7,7 +7,7 @@ then you pass the normal attributes you would pass to that HTML element
  */
 const Input = props => {
   let inputElement = null;
-  let inputClassName = `field-element__input-field--${props.inputType}`;
+  let inputClassName = `input field-element__input-field--${props.inputType}`;
   let inputStyleLayout = {
     gridArea: props.gridAreaLocation
   };
@@ -68,7 +68,7 @@ const Input = props => {
     return (
       <React.Fragment>
         <div
-          className={"field-element field-element-" + props.id}
+          className={"field field-element field-element-" + props.id}
           style={inputStyleLayout}
         >
           <label>{props.label}</label>
@@ -80,7 +80,7 @@ const Input = props => {
     return (
       <React.Fragment>
         <div
-          className={"field-element field-element-" + props.id}
+          className={"field field-element field-element-" + props.id}
           style={inputStyleLayout}
         >
           {inputElement}</div>

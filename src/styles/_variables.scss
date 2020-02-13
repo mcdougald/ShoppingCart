@@ -1,13 +1,13 @@
 $purple: #332463;
 $light-purple: #8b81ae;
 $dark-purple: #161024;
-$egg-white: #f5f2ff;
+$egg-white: #f2f3f4;
 $pink-purple: #f4e0fc;
 $primary-purple: #8b81ae;
 
 
 $dark: $dark-purple;
-$light: $light-purple;
+$light: $purple;
 $grey-light: $light-purple;
 $primary: $purple;
 $link: $primary-purple;
@@ -20,7 +20,6 @@ $text: $primary-purple;
 // Update some of Bulma's component variables
 $body-background-color: $egg-white;
 $control-border-width: 2px;
-$input-border-color: transparent;
 $input-shadow: none;
 
 
@@ -29,3 +28,16 @@ $button-color: $primary-purple;
 $button-border-color: $light-purple;
 $button-hover-border-color: $purple;
 $button-hover-color: $purple;
+
+// Navbar
+$navbar-background-color: $egg-white;
+
+// Input variables
+$input-border-color: $purple;
+$input-focus-color: $light-purple;
+
+// Columns
+$column-gap: 2rem;
+
+// Footer
+$footer-background-color: $dark-purple;

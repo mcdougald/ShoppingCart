@@ -7,7 +7,7 @@ const Header = () => {
     <div className='header'>
       <div className='top-bar'>
         <h1>Store Name</h1>
-        <nav className={'navbar is-background'}>
+        <nav className={'navbar is-transparent'}>
           <ul className='navbar__column--left'>
             <li className='nav-item'>
               <NavLink
@@ -42,7 +42,7 @@ const Header = () => {
             <li className='nav-item'>
               <NavLink
                 className='navbar__link'
-                to='/user'
+                to='/user:id'
                 activeClassName='navbar__link--active'
               >Account</NavLink>
             </li>

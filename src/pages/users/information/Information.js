@@ -221,42 +221,42 @@ class UserInformationForm extends React.Component {
     }
 
     return (
-      <div className="row">
+      <div className='column is-variable' >
         <Panel panelName={'account-overview'}>
-          <div className="form-container">
-            <h2 className="weight-bold">Finish Registering!</h2>
-            <form className='form' id="form" onSubmit={this.handleSubmit.bind( this )} method="POST">
-              {inputArray.map(fieldElement => (
-                  <Input
-                  key={fieldElement.id}
-                  id={fieldElement.id}
-                  touched={fieldElement.inputData.touched}
-                  gridAreaLocation={fieldElement.inputData.gridAreaLocation}
-                  check={fieldElement.inputData.validity}
-                  valid={!fieldElement.inputData.valid}
-                  changed={( event ) => this.handleChange( event, fieldElement.id )}
-                  value={fieldElement.inputData.value}
-                  fieldConfig={fieldElement.inputData.fieldConfig}
-                  inputType={fieldElement.inputData.type}
-                  label={fieldElement.inputData.label}
-                />
-              ))}
-            </form>
-            <div className="buttons is-grouped is-uppercase is-right form-container__col-3 btn-grp">
-              <p className="control">
-                <button disabled className="button is-medium is-marginless btn--save" onClick={this.onSave}>
-                  SAVE
-                </button>
-              </p>
-              <p className="control">
-                <button className="button is-medium is-marginless btn--reset" onClick={this.onReset}>
-                  RESET
-                </button>
-              </p>
-            </div>
+        <div className="form-container">
+          <h2 className="weight-bold">Finish Registering!</h2>
+          <form className='form' id="form" onSubmit={this.handleSubmit.bind( this )} method="POST">
+            {inputArray.map( fieldElement => (
+              <Input
+                key={fieldElement.id}
+                id={fieldElement.id}
+                touched={fieldElement.inputData.touched}
+                gridAreaLocation={fieldElement.inputData.gridAreaLocation}
+                check={fieldElement.inputData.validity}
+                valid={!fieldElement.inputData.valid}
+                changed={( event ) => this.handleChange( event, fieldElement.id )}
+                value={fieldElement.inputData.value}
+                fieldConfig={fieldElement.inputData.fieldConfig}
+                inputType={fieldElement.inputData.type}
+                label={fieldElement.inputData.label}
+              />
+            ) )}
+          </form>
+          <div className="buttons is-grouped is-uppercase is-right form-container__col-3 btn-grp">
+            <p className="control">
+              <button disabled className="button is-medium is-marginless btn--save"
+                      onClick={this.onSave}>
+                SAVE
+              </button>
+            </p>
+            <p className="control">
+              <button className="button is-medium is-marginless btn--reset" onClick={this.onReset}>
+                RESET
+              </button>
+            </p>
           </div>
-        </Panel>
-      </div>
+        </div>
+      </Panel></div>
     );
   }
 }
