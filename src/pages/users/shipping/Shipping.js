@@ -10,7 +10,7 @@ class ShippingInformation extends React.Component {
       addressLine1: {
         type: 'input',
         label: 'Address Line 1:',
-        gridAreaLocation: '3 / 1 / span 1 / span 5',
+        gridAreaLocation: '1 / 1 / span 1 / span 5',
         fieldConfig: {
           name: 'Address 1',
           type: 'text',
@@ -27,7 +27,7 @@ class ShippingInformation extends React.Component {
       addressLine2: {
         type: 'input',
         label: 'Address Line 2:',
-        gridAreaLocation: '4 / 1 / span 1 / span 5',
+        gridAreaLocation: '2 / 1 / span 1 / span 5',
         fieldConfig: {
           name: 'Address 2',
           type: 'text',
@@ -43,7 +43,7 @@ class ShippingInformation extends React.Component {
       city: {
         type: 'input',
         label: 'City:',
-        gridAreaLocation: '5 / 1 / span 1 / span 2',
+        gridAreaLocation: '3 / 1 / span 1 / span 2',
         fieldConfig: {
           name: 'City',
           type: 'text',
@@ -60,7 +60,7 @@ class ShippingInformation extends React.Component {
       state: {
         type: 'select',
         label: 'State:',
-        gridAreaLocation: '5 / 3 / span 1 / span 2',
+        gridAreaLocation: '3 / 3 / span 1 / span 2',
         fieldConfig: {
           options: LOCATION_OPTIONS
         },
@@ -75,7 +75,7 @@ class ShippingInformation extends React.Component {
       zipcode: {
         type: 'input',
         label: 'Zip Code:',
-        gridAreaLocation: '5 / 5 / span 1 / span 1',
+        gridAreaLocation: '3 / 5 / span 1 / span 1',
         fieldConfig: {
           name: 'Zip Code',
           type: 'text',
@@ -142,43 +142,42 @@ class ShippingInformation extends React.Component {
     }
 
     return (
-      <div className="row">
-        <Panel panelName={'shipping'}>
-          <div className="form-container">
-            <h2>Shipping Address</h2>
-            <form className='form' onSubmit={this.handleSubmit.bind( this )} method="POST">
-              {inputArray.map( fieldElement => (
-                <Input
-                  key={fieldElement.id}
-                  touched={fieldElement.inputData.touched}
-                  gridAreaLocation={fieldElement.inputData.gridAreaLocation}
-                  check={fieldElement.inputData.validity}
-                  valid={!fieldElement.inputData.valid}
-                  changed={( event ) => this.handleChange( event, fieldElement.id )}
-                  value={fieldElement.inputData.value}
-                  fieldConfig={fieldElement.inputData.fieldConfig}
-                  inputType={fieldElement.inputData.type}
-                  label={fieldElement.inputData.label}
-                />
-              ) )}
-            </form>
-            <div className="buttons is-grouped is-uppercase is-right form-container__col-3 btn-grp">
-              <p className="control">
-                <button disabled className="button is-medium is-marginless btn--save"
-                        onClick={this.onSave}>
-                  SAVE
-                </button>
-              </p>
-              <p className="control">
-                <button className="button is-medium is-marginless btn--reset"
-                        onClick={this.onReset}>
-                  RESET
-                </button>
-              </p>
-            </div>
+      <div className='column'><Panel panelName={'shipping'}>
+        <div className="form-container">
+          <h2>Shipping Address</h2>
+          <form className='shipping-form' onSubmit={this.handleSubmit.bind( this )} method="POST">
+            {inputArray.map( fieldElement => (
+              <Input
+                key={fieldElement.id}
+                id={fieldElement.id}
+                touched={fieldElement.inputData.touched}
+                gridAreaLocation={fieldElement.inputData.gridAreaLocation}
+                check={fieldElement.inputData.validity}
+                valid={!fieldElement.inputData.valid}
+                changed={( event ) => this.handleChange( event, fieldElement.id )}
+                value={fieldElement.inputData.value}
+                fieldConfig={fieldElement.inputData.fieldConfig}
+                inputType={fieldElement.inputData.type}
+                label={fieldElement.inputData.label}
+              />
+            ) )}
+          </form>
+          <div className="buttons is-grouped is-uppercase is-right form-container__col-3 btn-grp">
+            <p className="control">
+              <button disabled className="button is-medium is-marginless btn--save"
+                      onClick={this.onSave}>
+                SAVE
+              </button>
+            </p>
+            <p className="control">
+              <button className="button is-medium is-marginless btn--reset"
+                      onClick={this.onReset}>
+                RESET
+              </button>
+            </p>
           </div>
-        </Panel>
-      </div>
+        </div>
+      </Panel></div>
     );
   }
 }

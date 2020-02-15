@@ -225,7 +225,7 @@ class UserInformationForm extends React.Component {
         <Panel panelName={'account-overview'}>
         <div className="form-container">
           <h2 className="weight-bold">Finish Registering!</h2>
-          <form className='form' id="form" onSubmit={this.handleSubmit.bind( this )} method="POST">
+          <form className='account-form' id="form" onSubmit={this.handleSubmit.bind( this )} method="POST">
             {inputArray.map( fieldElement => (
               <Input
                 key={fieldElement.id}

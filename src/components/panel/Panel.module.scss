@@ -1,5 +1,12 @@
 @import '/../../styles/_variables.scss';
 
+.panel-headers {
+  color: #7d6d84;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
 
 $panel-shadow: 0 0.5em 1em -0.125em rgba($purple, 0.3), 0 0px 0 1px rgba($purple, 0.04);
 
@@ -20,6 +27,32 @@ $panel-shadow: 0 0.5em 1em -0.125em rgba($purple, 0.3), 0 0px 0 1px rgba($purple
     @extend .panel;
     width: fit-content;
     margin: 3rem auto;
-
   }
+
+  &--shipping {
+    @extend .panel;
+    width: fit-content;
+    margin: 3rem auto;
+    height: fit-content;
+  }
+
+  &--payments {
+     @extend .panel;
+    margin: 3rem auto;
+    min-width: 656px;
+    h2 {
+       @extend .panel-headers;
+     }
+   }
+
+  &--order-history {
+    @extend .panel;
+    margin: 3rem auto;
+    min-width: 656px;
+    h2 {
+      @extend .panel-headers;
+    }
+  }
+
+
 }

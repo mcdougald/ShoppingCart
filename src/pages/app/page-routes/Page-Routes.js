@@ -10,25 +10,23 @@ import NotFound from '../../not-found/Not-Found';
 
 const PageRoutes = () => {
   return (
-    <div className='container'>
-      <Switch>
-        <Route path='/store'>
-          <Shop />
-        </Route>
-        <Route path='/checkout'>
-          <Checkout />
-        </Route>
-        <Route path='/user:id'>
-          <UserRoutes />
-        </Route>
-        <Route path='/' exact>
-          <Home />
-        </Route>
-        <Route>
-          <NotFound />
-        </Route>
-      </Switch>
-    </div>
+    <div className='container'><Switch>
+      <Route path='/store'>
+        <Shop/>
+      </Route>
+      <Route path='/checkout'>
+        <Checkout/>
+      </Route>
+      <Route path='/user:id'>
+        <UserRoutes/>
+      </Route>
+      <Route path='/' exact>
+        <Home/>
+      </Route>
+      <Route>
+        <NotFound/>
+      </Route>
+    </Switch></div>
   );
 };
 
