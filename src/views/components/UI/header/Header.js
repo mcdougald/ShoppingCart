@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import HeaderLink from '../HeaderLink/HeaderLink';
 
 const Header = () => {
   return (
@@ -9,56 +9,21 @@ const Header = () => {
         <h1>Store Name</h1>
         <nav className={'navbar is-transparent'}>
           <ul className='navbar__column--left'>
-            <li className='nav-item'>
-              <NavLink
-                to='/'
-                exact
-                className='navbar__link'
-                activeClassName='navbar__link--active'
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink
-                className='navbar__link'
-                to='/store'
-                activeClassName='navbar__link--active'
-              >
-                Shop
-              </NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink
-                className='navbar__link'
-                to='/checkout'
-                activeClassName='navbar__link--active'
-              >
-                Checkout
-              </NavLink>
-            </li>
+            <HeaderLink URI={'/'} linkTitle={'Home'} />
+            <HeaderLink URI={'/store'} linkTitle={'Store'} />
+            <HeaderLink URI={'/checkout'} linkTitle={'Checkout'} />
           </ul>
           <ul className='navbar__column--right'>
-            <li className='nav-item'>
-              <NavLink
-                className='navbar__link'
-                to='/user:id/user-information'
-                activeClassName='navbar__link--active'
-              >Account</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink
-                className='navbar__link'
-                to='/logout'
-                activeClassName='navbar__link--active'
-              >Logout</NavLink>
-            </li>
+            <HeaderLink URI={'/login'} linkTitle={'Login'} />
+            <HeaderLink URI={'/register'} linkTitle={'Register'} />
           </ul>
         </nav>
       </div>
     </div>
   );
 };
+
+
 
 
 export default Header;

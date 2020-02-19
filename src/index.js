@@ -4,15 +4,12 @@ import "./index.scss";
 import App from "./views/App/App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
-import configureStore from "./state/store";
-
-const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
+import store from "./state/store";
 
 // This is the JavaScript Entry Point. ReactDOM.render call lives here, we're
 // rendering the Application component, which I haven't fully written yet.
-
 ReactDOM.render(
-  <Provider store={reduxStore}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById("root")

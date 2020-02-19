@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import { Home } from '../../pages/home/Home';
 import { Shop } from '../../pages/shop/Shop';
 import { Checkout } from '../../pages/checkout/Checkout';
-import UserRoutes from '../../components/user/user-routes/User-Routes';
+import UserRoutes from '../../components/account/user-routes/User-Routes';
 import Shipping from '../../pages/users/shipping/Shipping';
 import NotFound from '../../pages/not-found/Not-Found';
 

@@ -13,3 +13,5 @@ const createLogger = store => next => action => {
 function logInfo( ...args ) {
   console.info( ...args );
 }
+
+export default createLogger

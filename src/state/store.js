@@ -1,5 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { createLogger } from '../middlewares/logger';
+
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { default as createLogger } from './middlewares/logger';
 import * as reducers from './ducks';
 import { LOG_OUT } from './ducks/user/types';
 
@@ -10,10 +12,8 @@ const rootReducer = (state, action) => {
 };
 
 
-export default function configureStore(initialState) {
-  return createStore(
+export default createStore(
     rootReducer,
-    initialState,
-    applyMiddleware( createLogger )
-  );
-}
+    composeWithDevTools(applyMiddleware( createLogger ))
+);
+
