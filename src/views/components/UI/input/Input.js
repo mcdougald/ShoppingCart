@@ -1,4 +1,5 @@
 import React from "react";
+import { Field } from 'redux-form';
 import { LOCATION_OPTIONS } from "../../../../config/locations";
 /*
 For default input attributes, you only need to set the input type prop,
@@ -7,6 +8,7 @@ then you pass the normal attributes you would pass to that HTML element
  */
 const Input = props => {
   let inputElement = null;
+  let fieldElement = null;
   let inputClassName = `input field-element__input-field--${props.inputType}`;
   let inputStyleLayout = {
     gridArea: props.gridAreaLocation
@@ -27,6 +29,7 @@ const Input = props => {
           onChange={props.changed}
         />
       );
+
       break;
     case "select":
       inputElement = (
@@ -64,6 +67,10 @@ const Input = props => {
       );
   }
 
+  fieldElement = (
+    <Field {...props.fieldConfig} type={props.inputType} component={inputElement}/>
+  );
+
   if (props.label !== null) {
     return (
       <React.Fragment>
@@ -72,7 +79,7 @@ const Input = props => {
           style={inputStyleLayout}
         >
           <label>{props.label}</label>
-          {inputElement}
+          {fieldElement}
         </div>
       </React.Fragment>
     );
@@ -83,7 +90,8 @@ const Input = props => {
           className={"field field-element field-element-" + props.id}
           style={inputStyleLayout}
         >
-          {inputElement}</div>
+          {fieldElement}
+        </div>
       </React.Fragment>
     );
   }

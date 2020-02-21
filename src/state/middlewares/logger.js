@@ -1,4 +1,12 @@
-const createLogger = store => next => action => {
+import { createLogger } from 'redux-logger'
+
+export default createLogger({
+  diff: true
+});
+
+
+
+/*const createLogger = store => next => action => {
   const prevState = store.getState( );
   const result = next( action );
   const nextState = store.getState( );
@@ -12,6 +20,6 @@ const createLogger = store => next => action => {
 
 function logInfo( ...args ) {
   console.info( ...args );
-}
+}*/
 
-export default createLogger
+// export default logger

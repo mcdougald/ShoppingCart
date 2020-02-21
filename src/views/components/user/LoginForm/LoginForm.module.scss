@@ -1,0 +1,28 @@
+@import '../../../styles/variables';
+
+
+.loginForm {
+
+  .button-group {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    width: 50%;
+  }
+
+  button {
+    color: $egg-white;
+    background-color: $dark-purple;
+    border: none;
+    width: 60%;
+
+    &:hover {
+      color: $egg-white;
+      background-color: $purple;
+    }
+  }
+
+
+}

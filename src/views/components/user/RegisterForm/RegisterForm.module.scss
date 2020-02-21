@@ -1,0 +1,84 @@
+@import '../../../styles/variables';
+
+
+.registerForm {
+
+  .field-group {
+    margin: 2rem 5rem 1rem 5rem;
+  }
+
+  .button-group {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .error {
+    color: $invalid-color;
+  }
+
+  .pass-field {
+    width: 90%;
+    margin: auto;
+  }
+
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .fix-size {
+    width: 90% !important;
+    input {
+      font-size: .7rem !important;
+    }
+
+    .icon {
+      padding-top: 2.5%;
+      padding-right: 9%;
+      align-items: start;
+    }
+
+  }
+
+  input[type=text] {
+    padding: .4rem .7rem;
+    width: 100%;
+
+    &.is-invalid {
+      @extend %is-invalid;
+    }
+
+    &.is-valid {
+      @extend %is-valid;
+    }
+  }
+
+  input[type=password] {
+    padding: .4rem .7rem;
+    @extend .fix-size;
+
+    &.is-invalid {
+      @extend %is-invalid;
+    }
+
+    &.is-valid {
+      @extend %is-valid;
+    }
+  }
+
+  button {
+    color: $egg-white;
+    background-color: $dark-purple;
+    border: none;
+    width: 60%;
+
+    &:hover {
+      color: $egg-white;
+      background-color: $purple;
+    }
+  }
+
+}

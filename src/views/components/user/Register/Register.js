@@ -1,9 +1,12 @@
 import React from "react";
-import Select from "react-select";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Input from "../../UI/input/Input";
 
 import Panel from '../../panel/Panel';
+import RegisterForm from '../RegisterForm/RegisterForm'
+
+const registerImage = require('../../../../assets/images/register-account-icon.jpg');
+
 
 class Register extends React.Component {
 
@@ -11,11 +14,15 @@ class Register extends React.Component {
     return (
       <div className='column'>
         <Panel panelName={'user'}>
-          <h2>Register</h2>
+          <h2>Register Account</h2>
+          <img className='login-icon'
+               src={registerImage}
+               alt='Creating Account Icon' />
+          <RegisterForm />
         </Panel>
       </div>
     );
   }
 }
 
-export default Register;
+export default connect()(Register);

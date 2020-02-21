@@ -4,7 +4,8 @@ $dark-purple: #161024;
 $egg-white: #f2f3f4;
 $pink-purple: #f4e0fc;
 $primary-purple: #8b81ae;
-
+$invalid-color: salmon;
+$valid-color: palegreen;
 
 $dark: $dark-purple;
 $light: $purple;
@@ -42,4 +43,12 @@ $column-gap: 2rem;
 // Footer
 $footer-background-color: $dark-purple;
 
+%is-invalid {
+  border: 2px solid $invalid-color;
+  box-shadow: 0 0 8px 2px rgba(250, 128, 114, 0.75);
+}
 
+%is-valid {
+  border-color: $valid-color;
+  box-shadow: 0 0 8px 2px rgba(152, 251, 152, 0.75);
+}

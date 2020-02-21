@@ -56,9 +56,13 @@ $panel-shadow: 0 0.5em 1em -0.125em rgba($purple, 0.3), 0 0px 0 1px rgba($purple
 
   &--user {
     @extend .panel;
-    margin: 3rem auto;
+    margin: .5rem auto;
+    width: 60%;
     h2 {
       @extend .panel-headers;
+    }
+    img {
+      object-fit: contain;
     }
   }
 

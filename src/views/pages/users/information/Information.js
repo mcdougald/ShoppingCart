@@ -17,7 +17,7 @@ class UserInformationForm extends React.Component {
         label: null,
         gridAreaLocation: '1 / 1 / span 1 / span 2',
         fieldConfig: {
-          name: 'First Name',
+          name: 'FirstName',
           type: 'text',
           placeholder: 'First Name'
         },
@@ -34,7 +34,7 @@ class UserInformationForm extends React.Component {
         label: null,
         gridAreaLocation: '1 / 3 / span 1 / span 3',
         fieldConfig: {
-          name: 'Last Name',
+          name: 'LastName',
           type: 'text',
           placeholder: 'Last Name'
         },
@@ -85,7 +85,7 @@ class UserInformationForm extends React.Component {
         label: 'Address Line 1:',
         gridAreaLocation: '3 / 1 / span 1 / span 5',
         fieldConfig: {
-          name: 'Address 1',
+          name: 'Address1',
           type: 'text',
           placeholder: 'Street Address'
         },
@@ -102,7 +102,7 @@ class UserInformationForm extends React.Component {
         label: 'Address Line 2:',
         gridAreaLocation: '4 / 1 / span 1 / span 5',
         fieldConfig: {
-          name: 'Address 2',
+          name: 'Address2',
           type: 'text',
           placeholder: 'Apt, Suite, Bldg'
         },
@@ -150,7 +150,7 @@ class UserInformationForm extends React.Component {
         label: 'Zip Code:',
         gridAreaLocation: '5 / 5 / span 1 / span 1',
         fieldConfig: {
-          name: 'Zip Code',
+          name: 'ZipCode',
           type: 'text',
           placeholder: 'Zip Code'
         },
