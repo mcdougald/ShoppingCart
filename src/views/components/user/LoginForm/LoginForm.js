@@ -32,7 +32,7 @@ const LoginForm = props => {
         <button
           className='button make-center is-small' type='submit'>Login
         </button>
-        <p><a href='/'>Forgot password or username</a></p>
+        <p><a href='/'>Forgot username or password</a></p>
       </div>
     </form>
   )
