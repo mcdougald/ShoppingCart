@@ -11,15 +11,20 @@ const renderTextField = ({ input, placeholder, type, className,
       {(touched && error) ?
         <p className={'control has-icons-right'}>
           <input
-          className={'input is-invalid ' + className} {...input} placeholder={placeholder}
+          className={'Input is-invalid ' + className} {...input} placeholder={placeholder}
           type={type} />
-          <span className="icon is-right has-text-danger">
-            <i className="fas fa-check"></i>
+          <span className="icon is-right is-invalid-icon" key={Math.random()}>
+            <i className="fas fa-exclamation is-invalid-icon"></i>
           </span>
         </p> : (touched) ?
-        <input
-          className={'input is-valid ' + className} {...input} placeholder={placeholder} type={type}
-        /> :
+          <p className={'control has-icons-right'}>
+            <input
+              className={'Input is-valid ' + className} {...input} placeholder={placeholder} type={type}
+            />
+            <span className="icon is-right is-valid-icon" key={Math.random()}>
+            <i className="fas fa-check is-valid-icon"></i>
+            </span>
+          </p> :
           <input
             className={className} {...input} placeholder={placeholder} type={type}
           />
@@ -36,17 +41,20 @@ const renderPasswordField = ({ input, placeholder, type, className,
     {(touched && error) ?
       <p className={'control has-icons-right is-size-7 has-text-centered'}>
         <input
-          className={'input is-invalid ' + className} {...input} placeholder={placeholder}
+          className={'Input is-invalid ' + className} {...input} placeholder={placeholder}
           type={type} />
-        <span className="icon is-right is-small has-text-danger is-size-6">
-            <i className="fas fa-check is-size-7">
-            </i>
+        <span className="icon is-right is-small is-size-6 is-invalid-icon" key={Math.random()}>
+            <i className="fas fa-exclamation is-invalid-icon is-size-7"></i>
           </span>
       </p> : (touched) ?
         <p className={'control has-icons-right is-size-7 has-text-centered'}>
         <input
-          className={'input is-valid ' + className} {...input} placeholder={placeholder} type={type}
-        /> </p>:
+          className={'Input is-valid ' + className} {...input} placeholder={placeholder} type={type}
+        />
+          <span className="icon is-right is-small is-size-6 is-valid-icon" key={Math.random()}>
+            <i className="fas fa-check is-valid-icon is-size-7"></i>
+            </span>
+        </p>:
         <p className={'control has-icons-right is-size-7 has-text-centered'}>
         <input
           className={className} {...input} placeholder={placeholder} type={type}

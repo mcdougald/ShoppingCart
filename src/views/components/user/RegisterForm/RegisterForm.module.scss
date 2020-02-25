@@ -58,6 +58,7 @@
 
   input[type=password] {
     padding: .4rem .7rem;
+    border-radius: 5px;
     @extend .fix-size;
 
     &.is-invalid {

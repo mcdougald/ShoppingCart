@@ -5,14 +5,15 @@
 @import '../styles/variables';
 
 
-@import '../components/UI/header/Header.module';
+@import '../components/header/Header.module';
 @import '../pages/users/information/Information.module';
-@import '../components/UI/footer/Footer.module';
-@import '../components/UI/input/Input.module';
+@import '../components/footer/Footer.module';
+@import '../UI/Input/Input.module';
 @import '../components/panel/Panel.module';
 @import '../components/account/sidebar/Sidebar.module';
 @import '../components/user/LoginForm/LoginForm.module';
 @import '../components/user/RegisterForm/RegisterForm.module';
+@import '../components/products/Product/Product.module';
 
 
 @import '../../../node_modules/bulma/sass/utilities/all';

@@ -1,8 +1,8 @@
 import React from "react";
 import { Field } from 'redux-form';
-import { LOCATION_OPTIONS } from "../../../../config/locations";
+import { LOCATION_OPTIONS } from "../../../config/locations";
 /*
-For default input attributes, you only need to set the input type prop,
+For default Input attributes, you only need to set the Input type prop,
 then you pass the normal attributes you would pass to that HTML element
 
  */
@@ -17,10 +17,10 @@ const Input = props => {
   switch (props.inputType) {
     case "input":
       /*
-      Expect to get the attributes you want to set on an input as props
-      for the input wrapper.
+      Expect to get the attributes you want to set on an Input as props
+      for the Input wrapper.
 
-      This allows you to distribute the props on the input element
+      This allows you to distribute the props on the Input element
        */
       inputElement = (
         <input
