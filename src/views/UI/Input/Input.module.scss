@@ -1,0 +1,114 @@
+
+.field-element {
+  padding: 0.2rem 0.1rem;
+  margin: 8px 0 4px 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &.field-element-lastName {
+    @extend .field-element;
+    width: 70%;
+    margin-left: 5%;
+  }
+
+  &.field-element-email {
+    @extend .field-element;
+    width: 70%;
+    margin-left: 5%;
+  }
+
+  &.field-element-firstName {
+    padding-right: 5%;
+  }
+
+  &.field-element-phone {
+    padding-right: 5%;
+
+  }
+
+  &-addressLine1 {
+    @extend .field-element;
+    width: 70%;
+  }
+
+  &-addressLine2 {
+    @extend .field-element;
+    width: 70%;
+  }
+
+  &-zipcode {
+    width: 70%;
+    padding-left: 5%;
+    justify-self: start;
+    margin-right: 20%;
+  }
+
+  &-state {
+  }
+
+  &-city {
+    padding-right: 5%;
+  }
+
+  &__input-field {
+    background-color: #ffffff;
+    border: 2px solid #151a2f;
+    border-radius: 8px;
+    outline: none;
+    position: relative;
+    -o-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    padding: .2rem .5rem;
+
+    &:focus {
+      background-color: #f2f3f4;
+      border: 2px solid #c1b5e4;
+    }
+  }
+
+  &__input-field--input {
+    @extend .field-element__input-field;
+  }
+
+  &__input-field--select {
+    @extend .field-element__input-field;
+    max-width: 75%;
+
+    option::after {
+      content: attr(data-descr);
+    }
+  }
+}
+
+  //Input, select {
+  //  background-color: #f2f3f4;
+  //  border: 2px solid #151a2f;
+  //  border-radius: 8px;
+  //  outline: none;
+  //  position: relative;
+  //  -o-transition: 0.2s;
+  //  -webkit-transition: 0.2s;
+  //  transition: 0.2s;
+  //
+  //  &:focus {
+  //    background-color: #f2f3f4;
+  //    border: 2px solid #c1b5e4;
+  //    border-radius: 8px;
+  //  }
+
+
+
+  //Input:focus, select:focus {
+  //  background-color: #f2f3f4;
+  //  border: 2px solid #c1b5e4;
+  //  border-radius: 8px;
+  //}
+
+.buttons {
+  > p.control {
+    padding: 1em 1.5em 1em .3em;
+  }
+}
+

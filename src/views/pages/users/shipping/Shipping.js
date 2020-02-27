@@ -1,6 +1,6 @@
 import React from 'react';
 import { LOCATION_OPTIONS } from '../../../../config/locations';
-import Input from '../../../components/UI/input/Input';
+import Input from '../../../UI/Input/Input';
 
 import Panel from "../../../components/panel/Panel";
 
@@ -108,7 +108,7 @@ class ShippingInformation extends React.Component {
     return isValid;
   };
 
-  // Each input element is updated as it's typed into
+  // Each Input element is updated as it's typed into
   handleChange = (event, id) => {
     // Copy the initial form state using spread operator
     const formCopy = {
@@ -116,7 +116,7 @@ class ShippingInformation extends React.Component {
     };
 
     // Use the fieldElement.id passed into handler to get
-    // the properties of the input element which is under focus.
+    // the properties of the Input element which is under focus.
     const formElement = {...formCopy[id]};
     // Change value property alone to event.target.value
     formElement.value = event.target.value;

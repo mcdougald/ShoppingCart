@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+.product__price {
+  color: #003d00;
+  padding: 1rem .5rem 0 0;
+  font-size: 2.1em;
+  font-weight: bold;
+  text-align: end;
+}
+
+.product__description {
+  font-size: 1.2rem;
+  margin: .5rem .2rem .5rem .2rem;
+  color: #5036ab;
+  max-width: 442px;
+}
+
+.product__title {
+  color: $purple;
+  font-size: 2.1rem;
+
+  h3 {
+    font-weight: bold;
+    padding-left: 1em;
+  }
+}
+
+.product__image {
+  padding: 0 1em .5em 2em;
+}

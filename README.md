@@ -4,8 +4,11 @@ Development. It is a fork from
 [This](https://github.com/georgeotj/InternetSoftwareDev3320) repository.
 The previous version used jQuery on the frontend and served files with
 EJS on the backend through Express. In this version I'll be rewriting
-the frontend with React and the backend won't serve any files. The
-Express application will simply be an API for the Store.
+the frontend with React, Redux, GraphQL, and Storybook. 
+
+The Express application will simply be an API for the Store. 
+
+I'm working on deploying the application with Docker, Kubernetes, and through AWS
 
 ## Page Images (9-13-2019, outdated version)
 #### Top of Home Page:

@@ -4,8 +4,9 @@ import { Route, Switch } from 'react-router-dom'
 import { Home } from '../../pages/home/Home';
 import { Shop } from '../../pages/shop/Shop';
 import { Checkout } from '../../pages/checkout/Checkout';
-import UserRoutes from '../../components/user/user-routes/User-Routes';
-import Shipping from '../../pages/users/shipping/Shipping';
+import Login from '../../components/user/Login/Login';
+import Register from '../../components/user/Register/Register';
+import UserRoutes from '../../components/account/user-routes/User-Routes';
 import NotFound from '../../pages/not-found/Not-Found';
 
 const PageRoutes = () => {
@@ -16,6 +17,12 @@ const PageRoutes = () => {
       </Route>
       <Route path='/checkout'>
         <Checkout/>
+      </Route>
+      <Route path='/login'>
+        <Login/>
+      </Route>
+      <Route path='/register'>
+        <Register/>
       </Route>
       <Route path='/user:id'>
         <UserRoutes/>

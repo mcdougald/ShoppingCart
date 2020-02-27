@@ -1,11 +1,11 @@
 import React from 'react';
 // import logo from '../assets/images/logo.svg';
 import './App.scss';
-import '../components/UI/header/Header.module.scss'
+import '../components/header/Header.module.scss'
 import {BrowserRouter as Router} from 'react-router-dom';
 
-import Header from '../components/UI/header/Header'
-import Footer from '../components/UI/footer/Footer'
+import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
 import PageRoutes from './page-routes/Page-Routes'
 
 class App extends React.Component {

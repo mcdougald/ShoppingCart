@@ -23,29 +23,17 @@ $panel-shadow: 0 0.5em 1em -0.125em rgba($purple, 0.3), 0 0px 0 1px rgba($purple
   -ms-flex-direction: column;
   flex-direction: column;
 
-  &--account-overview {
+  &.panel__product {
     @extend .panel;
+    box-shadow: none !important;
+    //margin: 1rem .5rem 1rem .5rem;
+    margin: auto;
+    border: 1px solid #D7D7D7;
+    max-width: 1000px;
     width: fit-content;
-    margin: 3rem auto;
   }
 
-  &--shipping {
-    @extend .panel;
-    width: fit-content;
-    margin: 3rem auto;
-    height: fit-content;
-  }
-
-  &--payments {
-     @extend .panel;
-    margin: 3rem auto;
-    min-width: 656px;
-    h2 {
-       @extend .panel-headers;
-     }
-   }
-
-  &--order-history {
+  &.panel__order-history {
     @extend .panel;
     margin: 3rem auto;
     min-width: 656px;
@@ -54,5 +42,46 @@ $panel-shadow: 0 0.5em 1em -0.125em rgba($purple, 0.3), 0 0px 0 1px rgba($purple
     }
   }
 
+  &.panel__shipping {
+    @extend .panel;
+    width: fit-content;
+    margin: 3rem auto;
+    height: fit-content;
+  }
 
+  &.panel__payments {
+    @extend .panel;
+    margin: 3rem auto;
+    min-width: 656px;
+    h2 {
+      @extend .panel-headers;
+    }
+  }
+
+  &.panel__user {
+    @extend .panel;
+    margin: .5rem auto;
+    width: 60%;
+    h2 {
+      @extend .panel-headers;
+    }
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &.panel__account-overview {
+    @extend .panel;
+    width: fit-content;
+    margin: 3rem auto;
+  }
+
+  &.panel__notFound {
+    @extend .panel;
+    height: fit-content;
+    width: fit-content;
+    margin: 5rem auto;
+  }
 }
+
+

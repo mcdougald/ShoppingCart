@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 import PropTypes from "prop-types";
-import Input from "../../../components/UI/input/Input";
+import Input from "../../../UI/Input/Input";
 
 import { LOCATION_OPTIONS } from "../../../../config/locations";
 
@@ -17,7 +17,7 @@ class UserInformationForm extends React.Component {
         label: null,
         gridAreaLocation: '1 / 1 / span 1 / span 2',
         fieldConfig: {
-          name: 'First Name',
+          name: 'FirstName',
           type: 'text',
           placeholder: 'First Name'
         },
@@ -34,7 +34,7 @@ class UserInformationForm extends React.Component {
         label: null,
         gridAreaLocation: '1 / 3 / span 1 / span 3',
         fieldConfig: {
-          name: 'Last Name',
+          name: 'LastName',
           type: 'text',
           placeholder: 'Last Name'
         },
@@ -85,7 +85,7 @@ class UserInformationForm extends React.Component {
         label: 'Address Line 1:',
         gridAreaLocation: '3 / 1 / span 1 / span 5',
         fieldConfig: {
-          name: 'Address 1',
+          name: 'Address1',
           type: 'text',
           placeholder: 'Street Address'
         },
@@ -102,7 +102,7 @@ class UserInformationForm extends React.Component {
         label: 'Address Line 2:',
         gridAreaLocation: '4 / 1 / span 1 / span 5',
         fieldConfig: {
-          name: 'Address 2',
+          name: 'Address2',
           type: 'text',
           placeholder: 'Apt, Suite, Bldg'
         },
@@ -150,7 +150,7 @@ class UserInformationForm extends React.Component {
         label: 'Zip Code:',
         gridAreaLocation: '5 / 5 / span 1 / span 1',
         fieldConfig: {
-          name: 'Zip Code',
+          name: 'ZipCode',
           type: 'text',
           placeholder: 'Zip Code'
         },
@@ -181,7 +181,7 @@ class UserInformationForm extends React.Component {
     return isValid;
   };
 
-  // Each input element is updated as it's typed into
+  // Each Input element is updated as it's typed into
   handleChange = (event, id) => {
     // Copy the initial form state using spread operator
     const formCopy = {
@@ -189,7 +189,7 @@ class UserInformationForm extends React.Component {
     };
 
     // Use the fieldElement.id passed into handler to get
-    // the properties of the input element which is under focus.
+    // the properties of the Input element which is under focus.
     const formElement = {...formCopy[id]};
     // Change value property alone to event.target.value
     formElement.value = event.target.value;
@@ -267,7 +267,7 @@ export default UserInformationForm;
 /*
               <div className="formGroup">
                 <label htmlFor="firstName">First Name</label>
-                <input
+                <Input
                   type="text"
                   className="formControl"
                   id="firstName"
@@ -278,7 +278,7 @@ export default UserInformationForm;
               </div>
               <div className="formGroup">
                 <label htmlFor="lastName">Last Name</label>
-                <input
+                <Input
                   type="text"
                   className="formControl"
                   id="lastName"
@@ -289,7 +289,7 @@ export default UserInformationForm;
               </div>
               <div className="formGroup">
                 <label htmlFor="phone">Primary Phone</label>
-                <input
+                <Input
                   type="text"
                   className="formControl"
                   id="phone"
@@ -300,7 +300,7 @@ export default UserInformationForm;
               </div>
               <div className="formGroup">
                 <label htmlFor="email">Email</label>
-                <input
+                <Input
                   type="text"
                   className="formControl"
                   id="email"
@@ -311,7 +311,7 @@ export default UserInformationForm;
               </div>
               <div className="formGroup">
                 <label htmlFor="address1">Address Line 1</label>
-                <input
+                <Input
                   type="text"
                   className="formControl"
                   id="address1"
@@ -322,7 +322,7 @@ export default UserInformationForm;
               </div>
               <div className="formGroup">
                 <label htmlFor="address2">Address Line 2</label>
-                <input
+                <Input
                   type="text"
                   className="formControl"
                   id="address2"
@@ -333,7 +333,7 @@ export default UserInformationForm;
               </div>
               <div className="formGroup">
                 <label htmlFor="city">City</label>
-                <input
+                <Input
                   type="text"
                   className="formControl"
                   id="city"
@@ -361,7 +361,7 @@ export default UserInformationForm;
 
               <div className="formGroup">
                 <label htmlFor="zipcode">Zip Code</label>
-                <input
+                <Input
                   type="text"
                   className="formControl"
                   id="zipcode"
