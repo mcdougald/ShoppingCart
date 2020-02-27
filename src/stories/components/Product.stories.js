@@ -3,7 +3,8 @@ import Product from '../../views/components/products/Product/Product';
 
 export default {
   title: 'Product',
-  component: Product
+  component: Product,
+  excludeStories: /.*Data$/
 };
 
 export const productData = {

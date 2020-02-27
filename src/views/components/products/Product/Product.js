@@ -25,7 +25,7 @@ const Product = ({
 
   return (
     <div className={"row"}>
-      <div className={'column'}>
+      <div className={'is-paddingless column'}>
         <Panel panelName={'product'}>
         <div className={'is-marginless columns'}>
           <div className={'is-paddingless is-3 is-narrow column'}>
@@ -36,12 +36,12 @@ const Product = ({
               <img src={`${imagePath}${image}`} alt={'product'}/>
             </div>
           </div>
-          <div className={' is-marginless column is-centered'}>
-            <div className={'columns'}>
-              <div className={'is-paddingless column'}>
+          <div className={' is-marginless column is-centered is-flex'}>
+            <div className={'columns is-desktop is-flex'}>
+              <div className={'is-flex is-vcentered column'}>
                 <div className={'product__description '}>{description}</div>
               </div>
-              <div className={'is-paddingless column'}>
+              <div className={'is-paddingless is-3 column'}>
                 <div className={'product__price'}>$ {price}</div>
                 <ProductButton
                   className={'is-inverted'}
@@ -60,7 +60,7 @@ const Product = ({
 Product.displayName = "Product";
 
 Product.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number,
   image: PropTypes.string,
