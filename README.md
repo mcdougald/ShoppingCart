@@ -11,5 +11,15 @@ The Express application will simply be an API for the Store.
 I'm working on deploying the application with Docker, Kubernetes, and through AWS
 
 ## Project Demo (jQuery - Application-v1)
-
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0001.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0002.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0003.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0004.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0005.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0006.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0007.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0008.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0009.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0010.jpg)
+![Application Demo](https://github.com/TrevorMcDougald/ShoppingCart/blob/master/docs/page_images/Project-Demo-page0011.jpg)
 
