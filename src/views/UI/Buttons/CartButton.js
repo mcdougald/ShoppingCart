@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CartItemButton = ({value, onClick}) => {
+const CartButton = ({value, type, onClick}) => {
   return (
     <button
-      className={'button is-small cart-item__button'}
+      className={`button cart__button--${type}`}
     >
       {value}
     </button>
   );
 };
 
-CartItemButton.propTypes = {
+CartButton.propTypes = {
   value: PropTypes.string.isRequired
 };
 
-export default CartItemButton;
+export default CartButton;

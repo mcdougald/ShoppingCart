@@ -1,1 +1,51 @@
+.cart {
+  width: fit-content;
+  min-width: 400px;
+  .title {
+    text-align: center;
+  }
+}
 
+.cart__prices {
+  padding: 1rem 0 1rem 2rem;
+
+  .cart__subtotal, .cart__shipping, .cart__total {
+    font-size: 1.2rem;
+    padding: .2rem 0 .2rem 0
+  }
+
+}
+
+.cart__buttons {
+  padding: 0 0 1rem 1rem;
+
+}
+
+.cart__body {
+  width: 100%;
+}
+
+.cart-list {
+  width: 100%;
+}
+
+.cart-list__item {
+  width: 100%;
+}
+
+.center-table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.center-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cart__items {
+  min-width: max-content;
+  text-align: center;
+  text-align: -webkit-center;
+
+}

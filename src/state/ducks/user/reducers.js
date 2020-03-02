@@ -8,4 +8,4 @@ const initialState = {};
 
 const userReducer = createReducer(initialState, {
 
-})
+});

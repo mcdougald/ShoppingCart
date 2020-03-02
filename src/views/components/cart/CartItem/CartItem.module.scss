@@ -1,0 +1,30 @@
+.cart-item {
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+
+.cart-item__title {
+  min-width: max-content;
+}
+
+.cart-item__delete {
+  background-color: rgba(250, 0, 0, 0.3) !important;
+
+  &:hover {
+    background-color: rgba(250, 0, 0, 0.4) !important;
+  }
+  &:focus {
+    background-color: rgba(250, 0, 0, 0.4) !important;
+  }
+}
+
+.table__cell--delete {
+  border-bottom: none !important;
+}
+
+.cart-item__price {
+  height: fit-content;
+  width: fit-content;
+}
