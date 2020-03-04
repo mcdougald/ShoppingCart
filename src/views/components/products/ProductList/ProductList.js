@@ -6,7 +6,7 @@ import Product from '../Product/Product';
 
 const ProductList = ({ products }) => {
   return (
-    <div className={'column'}>
+    <div className={'column is-paddingless'}>
       <ul className="product-list">
         { products.map(product => (
           <li key={product.id} className="product-list__item">

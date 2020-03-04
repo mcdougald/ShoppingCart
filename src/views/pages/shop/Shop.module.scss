@@ -1,0 +1,23 @@
+.store {
+  &.columns {
+    margin: 2rem 0 0 0;
+  }
+
+}
+
+.store-products {
+  margin: 0 0 0 -6rem;
+  width: 150%;
+}
+
+.store-products__title {
+  font-size: 3.6rem;
+  font-weight: bold;
+  text-shadow: 5px 5px 11px #8b81ae, 2px 3px 4px #161024;
+
+}
+
+.store-cart {
+  width: 150%;
+  margin: 3rem 0 0 4rem;
+}

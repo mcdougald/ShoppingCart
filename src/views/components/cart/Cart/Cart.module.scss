@@ -1,8 +1,11 @@
 .cart {
   width: fit-content;
   min-width: 400px;
+  max-width: 500px;
+  margin: auto;
   .title {
     text-align: center;
+    margin: .5rem 0 .5rem 0 !important;
   }
 }
 
@@ -21,8 +24,18 @@
 
 }
 
+.cart__items--empty {
+  text-align: center;
+  height: auto;
+  white-space: unset;
+  width: 50%;
+  margin: auto;
+  font-size: 1.3em;
+  color: salmon;
+}
+
 .cart__body {
-  width: 100%;
+  width: fit-content;
 }
 
 .cart-list {

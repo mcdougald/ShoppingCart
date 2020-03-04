@@ -23,15 +23,12 @@ const Cart = ({ items, subtotal = 0, shipping = 0, removeFromCart, checkout, cle
         ) )}
         </tbody>
       </table>
-
-
-
     </div>
   );
 
   const emptyCartList = (
-    <div className={'cart-items alert'}>
-      Cart is empty
+    <div className={'cart__items--empty alert'}>
+      Cart is empty! Add a product from our list to your cart and then you can checkout
     </div>
   );
 

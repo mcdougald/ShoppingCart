@@ -28,12 +28,12 @@ const Product = ({
       <div className={'is-paddingless column'}>
         <Panel panelName={'product'}>
         <div className={'is-marginless columns'}>
-          <div className={'is-paddingless is-3 is-narrow column'}>
+          <div className={'product__identifiers is-paddingless is-3 is-narrow column'}>
             <div className={'product__title'}>
               <h3>{name}</h3>
             </div>
             <div className={'product__image is-marginless'}>
-              <img src={`${imagePath}${image}`} alt={'product'}/>
+              <img className='is-centered' src={`${imagePath}${image}`} alt={'product'}/>
             </div>
           </div>
           <div className={' is-marginless column is-centered is-flex'}>
