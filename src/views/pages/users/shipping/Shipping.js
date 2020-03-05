@@ -2,7 +2,7 @@ import React from 'react';
 import { LOCATION_OPTIONS } from '../../../../config/locations';
 import Input from '../../../UI/Input/Input';
 
-import Panel from "../../../components/panel/Panel";
+import Panel from "../../../UI/Panel/Panel";
 
 class ShippingInformation extends React.Component {
   state = {

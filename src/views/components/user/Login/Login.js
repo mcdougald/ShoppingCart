@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Panel from '../../panel/Panel';
+import Panel from '../../../UI/Panel/Panel';
 
 import LoginForm from '../LoginForm/LoginForm';
 

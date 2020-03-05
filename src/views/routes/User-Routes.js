@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 
-import Sidebar from '../sidebar/Sidebar';
-import Account from '../../../pages/users/information/Information';
-import Shipping from '../../../pages/users/shipping/Shipping';
-import Payments from '../payments/Payments';
-import Orders from '../orders/Orders';
+import Sidebar from '../components/account/sidebar/Sidebar';
+import Account from '../pages/users/information/Information';
+import Shipping from '../pages/users/shipping/Shipping';
+import Payments from '../components/account/payments/Payments';
+import Orders from '../components/account/orders/Orders';
 
 const UserRoutes = () => {
   return (

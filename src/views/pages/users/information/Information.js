@@ -5,7 +5,7 @@ import Input from "../../../UI/Input/Input";
 
 import { LOCATION_OPTIONS } from "../../../../config/locations";
 
-import Panel from "../../../components/panel/Panel";
+import Panel from "../../../UI/Panel/Panel";
 
 import "./Information.module.scss";
 

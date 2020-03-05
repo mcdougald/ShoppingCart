@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Panel from '../../panel/Panel';
+import Panel from '../../../UI/Panel/Panel';
 import CartItem from '../CartItem/CartItem';
 import CartButton from '../../../UI/Buttons/CartButton';
 
@@ -28,7 +28,7 @@ const Cart = ({ items, subtotal = 0, shipping = 0, removeFromCart, checkout, cle
 
   const emptyCartList = (
     <div className={'cart__items--empty alert'}>
-      Cart is empty! Add a product from our list to your cart and then you can checkout
+      Your cart is empty! It looks like you haven't added any products to your cart yet.
     </div>
   );
 

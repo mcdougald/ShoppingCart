@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Switch, Route } from 'react-router-dom';
 import PropTypes from "prop-types";
 
-import Panel from "../../panel/Panel";
+import Panel from "../../../UI/Panel/Panel";
 import Account from '../../../pages/users/information/Information';
 import Shipping from '../../../pages/users/shipping/Shipping';
 

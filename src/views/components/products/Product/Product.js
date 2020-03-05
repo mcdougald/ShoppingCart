@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Panel from "../../panel/Panel";
+import Panel from "../../../UI/Panel/Panel";
 import ProductButton from '../../../UI/Buttons/ProductButton';
 
 const imagePath = process.env.PUBLIC_URL + "/assets/images/";

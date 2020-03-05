@@ -1,5 +1,5 @@
 import React from 'react';
-import Panel from '../../panel/Panel';
+import Panel from '../../../UI/Panel/Panel';
 
 const Orders = () => {
   return (

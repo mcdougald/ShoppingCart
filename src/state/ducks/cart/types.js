@@ -1,0 +1,3 @@
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const CHECKOUT_CART = 'CHECKOUT_CART';
+export const EMPTY_CART = 'EMPTY_CART';

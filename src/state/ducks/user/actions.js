@@ -14,7 +14,12 @@ export const userLoggedOut = () => ({
 });
 
 export const login = (user, data) => dispatch => {
-  dispatch
+  try {
+    dispatch( userLoggedIn('TEST_JWT_ACCESS_TOKEN') )
+  } catch {
+      dispatch(userLoginFail());
+      console.error('Error logging in');
+  }
 };
   // fetch(POST, `/${user}/auth/login`, data)
   //   .then(({ data: { access_token } }) => {

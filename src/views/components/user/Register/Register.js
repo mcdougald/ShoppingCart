@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import Panel from '../../panel/Panel';
+import Panel from '../../../UI/Panel/Panel';
 import RegisterForm from '../RegisterForm/RegisterForm'
 
 const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
