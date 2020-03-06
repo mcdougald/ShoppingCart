@@ -20,10 +20,11 @@ const initialState = {
 
 const userReducer = createReducer(initialState, {
   [types.LOGIN]: (state, payload) => {
-    return { ...state,
+    return {
       isAuthenticated: true,
-      authToken: payload.data.token,
-      user: { ...payload.data.user }};
+      authToken: payload.token,
+      user: { id: 'id', ...payload.user }
+    };
   },
 
   [types.LOG_OUT]: () => {

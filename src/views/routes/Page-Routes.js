@@ -11,7 +11,7 @@ import NotFound from '../pages/not-found/Not-Found';
 
 const PageRoutes = () => {
   return (
-    <div className='container'><Switch>
+    <div className='container is-fullhd'><Switch>
       <Route path='/store'>
         <Shop/>
       </Route>

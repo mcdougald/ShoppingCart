@@ -1,13 +1,11 @@
 import React from "react";
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, Form } from 'redux-form';
 import Input from '../../../UI/Input/Input';
 
-const LoginForm = props => {
-
-  const { handleSubmit } = props;
+const LoginForm = ({ handleSubmit }) => {
 
   return (
-    <form className='loginForm is-centered' onSubmit={handleSubmit} >
+    <Form className='loginForm is-centered' onSubmit={handleSubmit} >
       <div className='field-group make-center'>
         <div className='field'>
           <Field
@@ -34,10 +32,11 @@ const LoginForm = props => {
         </button>
         <p><a href='/'>Forgot username or password</a></p>
       </div>
-    </form>
+    </Form>
   )
 };
 
-export default reduxForm({
-  form: 'login'
-})(LoginForm)
+// export default reduxForm({
+//   form: 'login'
+// })(LoginForm)
+export default LoginForm;

@@ -1,16 +1,24 @@
 import React from "react";
+import { connect } from "react-redux";
+import { reduxForm } from 'redux-form';
 import PropTypes from "prop-types";
 
 import Panel from '../../../UI/Panel/Panel';
 
 import LoginForm from '../LoginForm/LoginForm';
-
-const loginImage = require('../../../../assets/images/login-account-icon.jpg');
+import { login } from '../../../../state/ducks/user/actions';
+import { compose } from "redux";
 const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
 
 class Login extends React.Component {
 
+  static propTypes = {
+    login: PropTypes.func.isRequired
+  };
+
   render() {
+    const { handleSubmit } = this.props;
+
     return (
       <div className='column'>
         <Panel panelName={'user'}>
@@ -18,11 +26,36 @@ class Login extends React.Component {
           <img className='login-icon'
                src={`${iconPath}login-account-icon.jpg`}
                alt='Login Icon' />
-          <LoginForm />
+          <LoginForm handleSubmit={handleSubmit(values => login(values))}/>
         </Panel>
       </div>
     );
   }
 }
 
-export default Login;
+
+const mapDispatchToProps = {
+  login
+};
+
+const withConnect = connect(
+  null,
+  mapDispatchToProps
+);
+
+const withForm = reduxForm({
+  form: "LoginForm",
+  destroyOnUnmount: true,
+  forceUnregisterOnUnmount: true,
+  initialValues: {
+    username: localStorage.getItem("username")
+  }
+});
+
+
+const enhance = compose(
+  withConnect,
+  withForm
+);
+
+export default enhance(Login);

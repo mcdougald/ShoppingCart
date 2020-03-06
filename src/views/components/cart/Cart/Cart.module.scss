@@ -1,8 +1,8 @@
 .cart {
   width: fit-content;
-  min-width: 400px;
+  min-width: 350px;
   max-width: 400px;
-  margin: auto;
+  margin: 0;
   .title {
     text-align: center;
     margin: .5rem 0 .5rem 0 !important;
@@ -28,8 +28,8 @@
   text-align: center;
   height: auto;
   white-space: unset;
-  width: 50%;
-  margin: auto;
+  width: 75%;
+  margin: auto auto 1rem auto;
   font-size: 1.3em;
   color: salmon;
 }

@@ -43,16 +43,16 @@ const Shop = () => {
 
   return (
     <div className="row">
+      <h2 className='store-products__title'>
+        Browse our Products!
+      </h2>
       <div className="store columns">
         <div className='is-paddingless column'>
           <div className='store-products'>
-            <h2 className='store-products__title'>
-              Browse our Products!
-            </h2>
             <ProductList products={defaultProductData} />
           </div>
         </div>
-        <div className='column'>
+        <div className='column is-4'>
           <div className='store-cart'>
             <Cart items={defaultCartData}
                   subtotal={0}
