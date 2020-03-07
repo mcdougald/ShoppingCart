@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import HeaderLink from '../../UI/HeaderLink/HeaderLink';
 
-const Header = ({ user, userID }) => {
+const Header = ({ isAuthenticated, userID }) => {
   const guestLinks = (
     <ul className='navbar__column--right'>
       <HeaderLink URI={'/login'} linkTitle={'Login'} />
@@ -29,8 +29,7 @@ const Header = ({ user, userID }) => {
             <HeaderLink URI={'/store'} linkTitle={'Store'} />
             <HeaderLink URI={'/checkout'} linkTitle={'Checkout'} />
           </ul>
-          {!user && guestLinks}
-          {user && authLinks}
+          { isAuthenticated ? authLinks : guestLinks}
         </nav>
       </div>
     </div>
@@ -38,8 +37,8 @@ const Header = ({ user, userID }) => {
 };
 
 const mapStateToProps = (state) => ({
-  userID: state.id,
-  isAuthenticated: state.isAuthenticated
+  userID: state.user.id,
+  isAuthenticated: state.user.isAuthenticated
 });
 
 

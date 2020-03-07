@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form/immutable';
 import PropTypes from "prop-types";
 
 import Panel from '../../../UI/Panel/Panel';
@@ -12,12 +12,9 @@ const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
 
 class Login extends React.Component {
 
-  static propTypes = {
-    login: PropTypes.func.isRequired
-  };
 
   render() {
-    const { handleSubmit } = this.props;
+
 
     return (
       <div className='column'>
@@ -26,36 +23,37 @@ class Login extends React.Component {
           <img className='login-icon'
                src={`${iconPath}login-account-icon.jpg`}
                alt='Login Icon' />
-          <LoginForm handleSubmit={handleSubmit(values => login(values))}/>
+          <LoginForm />
         </Panel>
       </div>
     );
   }
 }
 
-
-const mapDispatchToProps = {
-  login
-};
-
-const withConnect = connect(
-  null,
-  mapDispatchToProps
-);
-
-const withForm = reduxForm({
-  form: "LoginForm",
-  destroyOnUnmount: true,
-  forceUnregisterOnUnmount: true,
-  initialValues: {
-    username: localStorage.getItem("username")
-  }
-});
-
-
-const enhance = compose(
-  withConnect,
-  withForm
-);
-
-export default enhance(Login);
+export default Login;
+// const mapDispatchToProps = {
+//   login
+// };
+//
+// const withConnect = connect(
+//   null,
+//   mapDispatchToProps
+// );
+//
+// const withForm = reduxForm({
+//   form: "LoginForm",
+//   destroyOnUnmount: true,
+//   forceUnregisterOnUnmount: true,
+//   initialValues: {
+//     username: localStorage.getItem("username")
+//   },
+//   onSubmit: login
+// });
+//
+//
+// const enhance = compose(
+//   withConnect,
+//   withForm
+// );
+//
+// export default enhance(Login);

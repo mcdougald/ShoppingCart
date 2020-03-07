@@ -1,11 +1,23 @@
 import React from "react";
-import { Field, reduxForm, Form } from 'redux-form';
+import { connect } from "react-redux";
+import { Field, reduxForm, Form } from 'redux-form/immutable';
+
+import { login } from '../../../../state/ducks/user/actions';
+import { compose } from "redux";
+
 import Input from '../../../UI/Input/Input';
 
-const LoginForm = ({ handleSubmit }) => {
+const LoginForm = (props) => {
+  const { handleSubmit, isSubmitting } = props;
+
+  const onLogin = values => {
+    props.login(values);
+
+  };
+
 
   return (
-    <Form className='loginForm is-centered' onSubmit={handleSubmit} >
+    <form className='loginForm is-centered' onSubmit={handleSubmit(onLogin)} >
       <div className='field-group make-center'>
         <div className='field'>
           <Field
@@ -21,7 +33,7 @@ const LoginForm = ({ handleSubmit }) => {
             className='control field-element__input-field'
             name='password'
             component='input'
-            type='text'
+            type='password'
             placeholder='Password'
           />
         </div>
@@ -32,11 +44,47 @@ const LoginForm = ({ handleSubmit }) => {
         </button>
         <p><a href='/'>Forgot username or password</a></p>
       </div>
-    </Form>
+    </form>
   )
 };
 
 // export default reduxForm({
 //   form: 'login'
 // })(LoginForm)
-export default LoginForm;
+// export default LoginForm;
+
+const mapStateToProps = state => {
+  return {
+    user: state.form['LoginForm']
+    ? state.form['LoginForm'].values
+      : undefined
+  };
+
+};
+
+const mapDispatchToProps = {
+  login
+};
+
+const withConnect = connect(
+  null,
+  mapDispatchToProps
+);
+
+const withForm = reduxForm({
+  form: "LoginForm",
+  destroyOnUnmount: true,
+  forceUnregisterOnUnmount: true,
+  initialValues: {
+    username: localStorage.getItem("username")
+  },
+  onSubmit: login
+});
+
+
+const enhance = compose(
+  withConnect,
+  withForm
+);
+
+export default enhance(LoginForm);

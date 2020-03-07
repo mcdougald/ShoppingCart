@@ -4,7 +4,7 @@ export const userLoggedIn = (token, user) => ({
   type: types.LOGIN,
   payload: {
     token,
-    user
+    user: user
   }
 });
 
@@ -16,7 +16,7 @@ export const userLoggedOut = () => ({
   type: types.LOG_OUT,
 });
 
-export const login = (user, data) => dispatch => {
+export const login = (user) => dispatch => {
   try {
     dispatch( userLoggedIn('TEST_JWT_ACCESS_TOKEN', user) )
   } catch {
