@@ -2,52 +2,6 @@
   margin: 0 auto 0 auto;
   width: fit-content;
   padding: 1rem;
-  display: grid;
-  grid-column-gap: 2rem;
-  grid-template-rows: [header] .5fr [content] 4fr [btn-col] .5fr;
-  grid-template-areas:
-          "header"
-          "content"
-          //"first-name last-name last-name"
-          //"phone email email"
-          //"addressLine1 addressLine1 addressLine1"
-          //"addressLine22 addressLine22 addressLine22"
-          //"city state zipcode"
-          "btn-col";
-
-
-  .account-form {
-    grid-area: content;
-    display: grid;
-    //grid-template-columns: 1fr 2fr 2fr;
-    //grid-template-areas:
-    //        "firstName . lastName"
-    //        "phone . email"
-    //        "addressLine1 addressLine1 addressLine1"
-    //        "addressLine2 addressLine2 addressLine2"
-    //        "city state zipcode";
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    //grid-template-areas:
-    //        "names"
-    //        "contact"
-    //        "addressLine1"
-    //        "addressLine2"
-    //        "location";
-
-  }
-
-  .shipping-form {
-    grid-area: content;
-    display: grid;
-    //grid-template-columns: 1fr 2fr 2fr;
-    //grid-template-areas:
-    //        "firstName . lastName"
-    //        "phone . email"
-    //        "addressLine1 addressLine1 addressLine1"
-    //        "addressLine2 addressLine2 addressLine2"
-    //        "city state zipcode";
-    grid-template-rows: 1fr 1fr 1fr;
-  }
 
   h2 {
     color: #7d6d84;;
@@ -56,9 +10,6 @@
     grid-area: header;
   }
 
-  &__col-3 {
-    grid-area: btn-col;
-    }
   }
 
 

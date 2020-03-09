@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom'
 import { reduxForm } from 'redux-form/immutable';
 import PropTypes from "prop-types";
 
@@ -14,6 +15,8 @@ class Login extends React.Component {
 
 
   render() {
+    if(this.props.isAuthenticated)
+      return <Redirect to={`/user:${this.props.userID}`} />;
 
 
     return (
@@ -30,7 +33,15 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+// export default Login;
+
+const mapStateToProps = (state) => ({
+  userID: state.user.id,
+  isAuthenticated: state.user.isAuthenticated
+});
+
+
+export default connect(mapStateToProps)(Login);
 // const mapDispatchToProps = {
 //   login
 // };

@@ -70,8 +70,9 @@ $panel-shadow: 0 0.5em 1em -0.125em rgba($purple, 0.3), 0 0px 0 1px rgba($purple
     }
   }
 
-  &.panel__account-overview {
+  &.panel__information-form {
     @extend .panel;
+    max-width: 550px;
     width: fit-content;
     margin: 3rem auto;
   }
