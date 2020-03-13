@@ -117,9 +117,7 @@ const Shop = () => {
         </div>
         <div className='column is-4'>
           <div className='store-cart'>
-            <Cart items={defaultCartData}
-                  subtotal={0}
-                  shipping={0} />
+            <Cart />
           </div>
         </div>
       </div>

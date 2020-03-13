@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Panel from "../../../UI/Panel/Panel";
+import { connect } from "react-redux";
 import ProductButton from '../../../UI/Buttons/ProductButton';
+import { addToCart } from '../../../../state/ducks/cart/actions';
+
 
 const imagePath = process.env.PUBLIC_URL + "/assets/images/";
 
@@ -21,6 +24,11 @@ const Product = ({
     } else {
       addToCart(id);
     }
+  };
+
+  const handleAddToCart = (event, productToCartItem) => {
+    event.preventDefault();
+    addToCart(productToCartItem);
   };
 
   return (
@@ -45,7 +53,9 @@ const Product = ({
                 <div className={'product__price'}>$ {price}</div>
                 <ProductButton
                   className={'is-inverted'}
-                  value={'Add to Cart'}>
+                  value={'Add to Cart'}
+                  onClick={(e) => {handleAddToCart(e, {id, name, price})}}
+                >
                 </ProductButton>
               </div>
             </div>
@@ -70,4 +80,8 @@ Product.propTypes = {
   removeFromCart: PropTypes.func.isRequired
 };
 
-export default Product;
+const mapDispatchToProps = {
+  addToCart: addToCart,
+};
+
+export default connect(null, mapDispatchToProps)(Product);

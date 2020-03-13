@@ -22,7 +22,7 @@ class Register extends React.Component {
       <div className='column'>
         <Panel panelName={'user'}>
           <h2>Register Account</h2>
-          <img className='login-icon'
+          <img className='register-icon'
                src={`${iconPath}register-account-icon.jpg`}
                alt='Creating Account Icon'
                rel={'preload'}/>

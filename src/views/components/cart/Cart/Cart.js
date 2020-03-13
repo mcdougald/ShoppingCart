@@ -1,12 +1,16 @@
 import React from 'react';
+import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import Panel from '../../../UI/Panel/Panel';
 import CartItem from '../CartItem/CartItem';
 import CartButton from '../../../UI/Buttons/CartButton';
+
+import { removeFromCart } from '../../../../state/ducks/cart/actions';
+
 const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
 
 
-const Cart = ({ items, subtotal = 0, shipping = 0, removeFromCart, checkout, clear}) => {
+const Cart = ({ cartItems, subtotal = 0, shipping = 0, removeFromCart, checkout, clear}) => {
   const cartList = (
     <React.Fragment>
       <div className={'cart__items'}>
@@ -19,9 +23,9 @@ const Cart = ({ items, subtotal = 0, shipping = 0, removeFromCart, checkout, cle
           </tr>
           </thead>
           <tbody>
-          {items.map( item => (
+          {cartItems.map( item => (
             <tr key={Math.random()} className={'cart-item'}>
-              <CartItem {...item} onClick={() => removeFromCart()}/>
+              <CartItem {...item} onClick={() => this.removeFromCart(item.id)}/>
             </tr>
           ) )}
           </tbody>
@@ -64,8 +68,8 @@ const Cart = ({ items, subtotal = 0, shipping = 0, removeFromCart, checkout, cle
       <Panel panelName={'cart'}>
         <h3 className={'title'}>Cart</h3>
         <div className={'cart__body'}>
-          { items.length > 0 && cartList }
-          { items.length === 0 && emptyCartList }
+          { cartItems.length > 0 && cartList }
+          { cartItems.length === 0 && emptyCartList }
         </div>
       </Panel>
     </div>
@@ -76,4 +80,13 @@ Cart.propTypes = {
 
 };
 
-export default Cart;
+const mapStateToProps = (state) => ({
+  cartItems: state.cart.cartItems,
+});
+
+const mapDispatchToProps = {
+  removeFromCart
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

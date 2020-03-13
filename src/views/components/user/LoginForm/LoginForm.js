@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Field, reduxForm, Form } from 'redux-form/immutable';
+import { Field, reduxForm, Form } from 'redux-form';
 
 import { login } from '../../../../state/ducks/user/actions';
 import { compose } from "redux";
@@ -40,7 +40,7 @@ const LoginForm = (props) => {
       </div>
       <div className='button-group'>
         <button
-          className='button make-center is-small' type='submit'>Login
+          className='button make-center is-paddingless' type='submit'>Login
         </button>
         <p><a href='/'>Forgot username or password</a></p>
       </div>
