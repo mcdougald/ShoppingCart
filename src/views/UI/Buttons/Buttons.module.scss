@@ -1,7 +1,39 @@
+@import '../../styles/variables';
+
+.account-buttons {
+  background-color: $dark-purple;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+
+  &:hover {
+    color: white;
+    background-color: $purple;
+  }
+
+}
+
+
 .button {
+
+  &:focus {
+    outline: 0 !important;
+    border: 2px solid $primary-purple !important;
+  }
 
   &.product__button {
     margin: 6rem 0 1rem 0;
+  }
+
+  &.account-save__button {
+    @extend .account-buttons;
+    margin: 1.5rem 1rem 1rem 1rem;
+
+  }
+
+  &.account-reset__button {
+    @extend .account-buttons;
+    margin: 1.5rem 1rem 1rem 0;
   }
 
 }

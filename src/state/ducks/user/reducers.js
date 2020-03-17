@@ -5,7 +5,7 @@ import * as types from './types';
 import * as utils from './utils';
 
 const initialState = {
-  user: null,
+
   id: null,
   authToken: null,
   username: null,
@@ -19,11 +19,16 @@ const initialState = {
 };
 
 const userReducer = createReducer(initialState, {
-  [types.LOGIN]: (state, payload) => {
-    return { ...state,
+  [types.LOGIN]: (state, action) => {
+    return {
+      ...state,
       isAuthenticated: true,
-      authToken: payload.data.token,
-      user: { ...payload.data.user }};
+      authToken: action.payload.token,
+      username: action.payload.user.username,
+      id: 'id',
+      password: action.payload.user.password
+
+    };
   },
 
   [types.LOG_OUT]: () => {

@@ -1,24 +1,25 @@
 import React from "react";
 import { NavLink, Switch, Route } from 'react-router-dom';
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import Panel from "../../../UI/Panel/Panel";
-import Account from '../../../pages/users/information/Information';
-import Shipping from '../../../pages/users/shipping/Shipping';
+import Account from '../information/Information';
+import Shipping from '../shipping/Shipping';
 
 
-const Sidebar = () => {
+const Sidebar = ({ username }) => {
 return (
   <div className='sidebar column is-variable is-one-quarter is-centered' >
     <nav className='menu'>
       <p className='menu-label'>
-        Username
+        {username}
       </p>
       <ul className='menu-list'>
         <li className='sidebar__item'>
           <NavLink
             className='sidebar__link'
-            to='/user:id/user-information'
+            to='/user:id/'
             activeClassName='sidebar__link--active is-active'
             exact
           >User Information
@@ -54,4 +55,9 @@ return (
   );
 };
 
-export default Sidebar;
+const mapStateToProps = (state) => ({
+  username: state.user.username,
+});
+
+export default connect(mapStateToProps)(Sidebar);
+

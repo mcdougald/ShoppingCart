@@ -1,0 +1,94 @@
+.field-group {
+  &.contact-field-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 2rem 0;
+
+    .field {
+      display: flex;
+    }
+
+    .field > .control {
+      margin: 0.5rem;
+    }
+  }
+
+  &.address-field-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+
+    .field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field:last-child {
+      display: flex;
+      flex-direction: row;
+
+      > .control:not(:last-child) {
+        padding-right: .4rem;
+      }
+    }
+  }
+
+}
+
+.input__firstName {
+  width: 100%;
+}
+
+.input__lastName {
+  width: 100%;
+  flex-grow: 1.4;
+}
+
+.input__phone {
+  width: 100%;
+}
+
+.input__email {
+  width: 100%;
+  flex-grow: 1.4;
+}
+
+.input__address1 {
+  width: 90%;
+  margin: 0 0 1rem 0;
+  &.shipping-input {
+    width: 75%;
+    padding: .4rem .8rem;
+  }
+}
+
+.input__address2 {
+  width: 90%;
+  &.shipping-input {
+    width: 75%;
+    padding: .4rem .8rem;
+  }
+}
+
+.input__city {
+  width: 90%;
+  &.shipping-input {
+    padding: .4rem .8rem;
+  }
+}
+
+.input__zipcode {
+  width: 70%;
+  &.shipping-input {
+    width: 75%;
+    padding: .4rem .8rem;
+  }
+}
+
+.select__state {
+  width: 95%;
+  &.shipping-input {
+    width: 90%;
+    padding: .4rem .8rem;
+  }
+}

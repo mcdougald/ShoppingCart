@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CartItemButton from '../../../UI/Buttons/CartItemButton';
 
-const CartItem = ({ id, name, price, quantity, onClick }) => {
+const CartItem = ({ id, name, price, subtotal, quantity, onClick }) => {
   return (
       <React.Fragment>
         <td className={`has-text-centered id-data-${id}`}>
@@ -15,10 +14,12 @@ const CartItem = ({ id, name, price, quantity, onClick }) => {
             {quantity}
           </div>
         </td>
-        <td className={'has-text-centered'}>$ {price}</td>
+        <td className={'has-text-centered'}>$ {subtotal}</td>
         <td className={'table__cell--delete'}>
           <div className='is-small'>
-            <a className={'delete is-small cart-item__delete'}></a>
+            <a
+              className={'delete is-small cart-item__delete'}
+              onClick={onClick}></a>
           </div>
         </td>
       </React.Fragment>
@@ -30,6 +31,7 @@ CartItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  subtotal: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired
 };

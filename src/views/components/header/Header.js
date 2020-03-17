@@ -1,8 +1,24 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { connect } from "react-redux";
+
 import HeaderLink from '../../UI/HeaderLink/HeaderLink';
 
-const Header = () => {
+const Header = ({ isAuthenticated, userID }) => {
+  const guestLinks = (
+    <ul className='navbar__column--right'>
+      <HeaderLink URI={'/login'} linkTitle={'Login'} />
+      <HeaderLink URI={'/register'} linkTitle={'Register'} />
+    </ul>
+  );
+
+  const authLinks = (
+    <ul className='navbar__column--right'>
+      <HeaderLink URI={`/user:${userID}`} linkTitle={'Account'} />
+      <HeaderLink URI={'/logout'} linkTitle={'Logout'} />
+    </ul>
+  )
+
+
   return (
     <div className='header'>
       <div className='top-bar'>
@@ -13,17 +29,17 @@ const Header = () => {
             <HeaderLink URI={'/store'} linkTitle={'Store'} />
             <HeaderLink URI={'/checkout'} linkTitle={'Checkout'} />
           </ul>
-          <ul className='navbar__column--right'>
-            <HeaderLink URI={'/login'} linkTitle={'Login'} />
-            <HeaderLink URI={'/register'} linkTitle={'Register'} />
-          </ul>
+          { isAuthenticated ? authLinks : guestLinks}
         </nav>
       </div>
     </div>
   );
 };
 
+const mapStateToProps = (state) => ({
+  userID: state.user.id,
+  isAuthenticated: state.user.isAuthenticated
+});
 
 
-
-export default Header;
+export default connect(mapStateToProps)(Header);

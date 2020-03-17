@@ -2,10 +2,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 
 import Sidebar from '../components/account/sidebar/Sidebar';
-import Account from '../pages/users/information/Information';
-import Shipping from '../pages/users/shipping/Shipping';
+import Account from '../components/account/information/Information';
+import Shipping from '../components/account/shipping/Shipping';
 import Payments from '../components/account/payments/Payments';
-import Orders from '../components/account/orders/Orders';
+import OrderHistory from '../components/account/OrderHistory/OrderHistory';
 
 const UserRoutes = () => {
   return (
@@ -37,7 +37,7 @@ const UserRoutes = () => {
       <Route path='/user:id/orders'>
         <div className='columns'>
           <Sidebar />
-          <Orders />
+          <OrderHistory />
         </div>
       </Route>
       </Switch>

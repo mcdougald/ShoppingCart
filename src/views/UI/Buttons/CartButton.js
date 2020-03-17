@@ -5,6 +5,7 @@ const CartButton = ({value, type, onClick}) => {
   return (
     <button
       className={`button cart__button--${type}`}
+      onClick={onClick}
     >
       {value}
     </button>
