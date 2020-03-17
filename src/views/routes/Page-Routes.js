@@ -1,17 +1,18 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 
-import { Home } from '../../pages/home/Home';
-import { Shop } from '../../pages/shop/Shop';
-import { Checkout } from '../../pages/checkout/Checkout';
-import Login from '../../components/user/Login/Login';
-import Register from '../../components/user/Register/Register';
-import UserRoutes from '../../components/account/user-routes/User-Routes';
-import NotFound from '../../pages/not-found/Not-Found';
+import { Home } from '../pages/home/Home';
+import { Shop } from '../pages/shop/Shop';
+import { Checkout } from '../pages/checkout/Checkout';
+import Login from '../components/user/Login/Login';
+import Register from '../components/user/Register/Register';
+import UserRoutes from './User-Routes';
+import NotFound from '../pages/not-found/Not-Found';
 
 const PageRoutes = () => {
   return (
-    <div className='container'><Switch>
+    <div className='container is-fullhd'>
+      <Switch>
       <Route path='/store'>
         <Shop/>
       </Route>
@@ -33,7 +34,8 @@ const PageRoutes = () => {
       <Route>
         <NotFound/>
       </Route>
-    </Switch></div>
+    </Switch>
+    </div>
   );
 };
 

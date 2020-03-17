@@ -1,6 +1,7 @@
 import { createLogger } from 'redux-logger'
 
 export default createLogger({
+  predicate: (getState, action) => !action.type.includes('@@redux-form'),
   diff: true
 });
 

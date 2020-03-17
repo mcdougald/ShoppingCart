@@ -1,8 +1,11 @@
 import * as types from './types';
 
-export const userLoggedIn = token => ({
+export const userLoggedIn = (token, user) => ({
   type: types.LOGIN,
-  token
+  payload: {
+    token,
+    user: user
+  }
 });
 
 export const userLoginFail = () => ({
@@ -13,8 +16,13 @@ export const userLoggedOut = () => ({
   type: types.LOG_OUT,
 });
 
-export const login = (user, data) => dispatch => {
-  dispatch
+export const login = (user) => dispatch => {
+  try {
+    dispatch( userLoggedIn('TEST_JWT_ACCESS_TOKEN', user) )
+  } catch {
+      dispatch(userLoginFail());
+      console.error('Error logging in');
+  }
 };
   // fetch(POST, `/${user}/auth/login`, data)
   //   .then(({ data: { access_token } }) => {

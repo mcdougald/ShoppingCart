@@ -6,17 +6,23 @@
 
 
 @import '../components/header/Header.module';
-@import '../pages/users/information/Information.module';
+@import '../components/account/information/Information.module';
 @import '../pages/not-found/Not-Found.module';
+@import '../pages/shop/Shop.module';
 @import '../components/footer/Footer.module';
 @import '../UI/Input/Input.module';
 @import '../UI/Buttons/Buttons.module';
-@import '../components/panel/Panel.module';
+@import '../UI/Panel/Panel.module';
 @import '../components/account/sidebar/Sidebar.module';
 @import '../components/user/LoginForm/LoginForm.module';
+@import '../components/user/Login/Login.module';
 @import '../components/user/RegisterForm/RegisterForm.module';
+@import '../components/user/Register/Register.module';
 @import '../components/products/Product/Product.module';
 @import '../components/products/ProductList/ProductList.module';
+@import '../components/cart/Cart/cart.module';
+@import '../components/cart/CartItem/CartItem.module';
+@import '../components/order/OrderSummary/OrderSummary.module';
 
 
 @import '../../../node_modules/bulma/sass/utilities/all';

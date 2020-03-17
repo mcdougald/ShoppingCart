@@ -6,10 +6,10 @@ import Product from '../Product/Product';
 
 const ProductList = ({ products }) => {
   return (
-    <div className={'column'}>
-      <ul className="product-list">
+    <div className={'column title is-ancestor is-paddingless'}>
+      <ul className="product-list title is-parent is-vertical">
         { products.map(product => (
-          <li key={product.id} className="product-list__item">
+          <li key={`productID--${product.id}`} className="product-list__item title is-child is-vertical">
             <Product {...product} />
           </li>
         ))}

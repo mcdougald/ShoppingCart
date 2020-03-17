@@ -10,4 +10,4 @@ const DefaultButton = ({value, onClick}) => {
   );
 };
 
-export { DefaultButton };
+export default DefaultButton;

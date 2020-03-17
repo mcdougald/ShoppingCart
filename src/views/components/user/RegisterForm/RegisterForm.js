@@ -103,7 +103,7 @@ const RegisterForm = props => {
         <button
           className='button make-center is-small' type='submit'>Register
         </button>
-        <p>Already have an account? Click <a href='/login'>here</a></p>
+        <p>Already have an account? Click <a href='/login'><b>here</b></a></p>
       </div>
     </form>
   )

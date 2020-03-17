@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 const ProductButton = ({value, onClick}) => {
   return (
     <button
-      className={'button product__button'}
+      className={'button is-small product__button'}
+      onClick={onClick}
+      autoFocus={true}
     >
       {value}
     </button>
