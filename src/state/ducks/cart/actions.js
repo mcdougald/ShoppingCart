@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import * as types from './types';
 
 
@@ -28,3 +29,12 @@ export const decrementQuantity = (product) => {
     payload: product
   }
 };
+
+export const emptyCart = () => ({
+    type: types.EMPTY_CART
+});
+
+export const handleEmptyCart = () => ({
+
+
+});

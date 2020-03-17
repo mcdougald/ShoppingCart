@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Panel from "../../../UI/Panel/Panel";
 import { connect } from "react-redux";
-import ProductButton from '../../../UI/Buttons/ProductButton';
+import { ProductButton } from '../../../UI/Buttons';
 import { addToCart } from '../../../../state/ducks/cart/actions';
 
 
@@ -54,7 +54,15 @@ const Product = ({
                 <ProductButton
                   className={'is-inverted'}
                   value={'Add to Cart'}
-                  onClick={(e) => {handleAddToCart(e, {id, name, price})}}
+                  onClick={(e) => {handleAddToCart(
+                    e,
+                    {
+                      id,
+                      name,
+                      price,
+                      image,
+                      description
+                    })}}
                 >
                 </ProductButton>
               </div>

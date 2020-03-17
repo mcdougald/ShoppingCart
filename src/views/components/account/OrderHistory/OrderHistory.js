@@ -1,7 +1,7 @@
 import React from 'react';
 import Panel from '../../../UI/Panel/Panel';
 
-const Orders = () => {
+const OrderHistory = () => {
   return (
     <div className="column">
       <Panel panelName={'order-history'}>
@@ -11,4 +11,4 @@ const Orders = () => {
   );
 };
 
-export default Orders
+export default OrderHistory

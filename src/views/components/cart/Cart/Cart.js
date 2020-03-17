@@ -1,16 +1,25 @@
-import React from 'react';
-import { connect } from "react-redux";
+import React, { useCallback } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 import PropTypes from 'prop-types';
 import Panel from '../../../UI/Panel/Panel';
 import CartItem from '../CartItem/CartItem';
-import CartButton from '../../../UI/Buttons/CartButton';
+import { CartButton } from '../../../UI/Buttons';
 
-import { removeFromCart } from '../../../../state/ducks/cart/actions';
+import { removeFromCart, emptyCart, userEmptiesCart } from '../../../../state/ducks/cart/actions';
 
 const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
 
 
-const Cart = ({ cartItems, subtotal = 0, shipping = 0, removeFromCart, checkout, clear}) => {
+const Cart = ({ checkout, clear }) => {
+  const { cart } = useSelector(state => ({cart: state.cart}));
+  const dispatch = useDispatch();
+
+  const handleEmptyCartButton = useCallback(
+    () => dispatch(emptyCart()),
+    [dispatch]
+  );
+
+
   const cartList = (
     <React.Fragment>
       <div className={'cart__items'}>
@@ -23,23 +32,24 @@ const Cart = ({ cartItems, subtotal = 0, shipping = 0, removeFromCart, checkout,
           </tr>
           </thead>
           <tbody>
-          {cartItems.map( item => (
+          {cart.cartItems.map( item => (
             <tr key={Math.random()} className={'cart-item'}>
-              <CartItem {...item} onClick={() => this.removeFromCart(item.id)}/>
+              <CartItem {...item} onClick={() => dispatch(removeFromCart(item.id))}/>
             </tr>
-          ) )}
+            )
+          )}
           </tbody>
         </table>
       </div>
       <div className='cart__prices'>
         <div className={'cart__subtotal'}>
-          Subtotal: <b>${subtotal}</b>
+          Subtotal: <b>${cart.cartSubtotal}</b>
         </div>
         <div className={'cart__shipping'}>
-          Shipping Cost: <b>${shipping}</b>
+          Shipping Cost: <b>${cart.cartShipping}</b>
         </div>
         <div className={'cart__total'}>
-          Total: <b>${subtotal + shipping}</b>
+          Total: <b>${cart.cartTotalCost}</b>
         </div>
       </div>
       <div className={'buttons are-small cart__buttons'}>
@@ -47,7 +57,8 @@ const Cart = ({ cartItems, subtotal = 0, shipping = 0, removeFromCart, checkout,
                     value={'Checkout'}
         />
         <CartButton type={'clear'}
-                    value={'Clear'}
+                    value={'Empty'}
+                    onClick={handleEmptyCartButton}
         />
       </div>
     </React.Fragment>
@@ -65,11 +76,12 @@ const Cart = ({ cartItems, subtotal = 0, shipping = 0, removeFromCart, checkout,
 
   return (
     <div className={'cart'}>
+      {  console.log(cart) }
       <Panel panelName={'cart'}>
         <h3 className={'title'}>Cart</h3>
         <div className={'cart__body'}>
-          { cartItems.length > 0 && cartList }
-          { cartItems.length === 0 && emptyCartList }
+          { cart.cartItems.length > 0 && cartList }
+          { cart.cartItems.length === 0 && emptyCartList }
         </div>
       </Panel>
     </div>
@@ -80,13 +92,15 @@ Cart.propTypes = {
 
 };
 
-const mapStateToProps = (state) => ({
-  cartItems: state.cart.cartItems,
-});
+// const mapStateToProps = (state) => ({
+//   cartItems: state.cart.cartItems,
+//   cartSubtotal: state.cart.cartSubtotal
+// });
+//
+// const mapDispatchToProps = {
+//   removeFromCart
+// };
 
-const mapDispatchToProps = {
-  removeFromCart
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+//
+// export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default Cart;

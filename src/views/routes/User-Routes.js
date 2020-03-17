@@ -5,7 +5,7 @@ import Sidebar from '../components/account/sidebar/Sidebar';
 import Account from '../components/account/information/Information';
 import Shipping from '../components/account/shipping/Shipping';
 import Payments from '../components/account/payments/Payments';
-import Orders from '../components/account/orders/Orders';
+import OrderHistory from '../components/account/OrderHistory/OrderHistory';
 
 const UserRoutes = () => {
   return (
@@ -37,7 +37,7 @@ const UserRoutes = () => {
       <Route path='/user:id/orders'>
         <div className='columns'>
           <Sidebar />
-          <Orders />
+          <OrderHistory />
         </div>
       </Route>
       </Switch>

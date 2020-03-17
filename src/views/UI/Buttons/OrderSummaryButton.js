@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CartButton = ({value, type, onClick}) => {
+const OrderSummaryButton = ({value, type, onClick}) => {
   return (
     <button
-      className={`button cart__button--${type}`}
+      className={`button order__button--${type}`}
       onClick={onClick}
     >
       {value}
@@ -12,8 +12,8 @@ const CartButton = ({value, type, onClick}) => {
   );
 };
 
-CartButton.propTypes = {
+OrderSummaryButton.propTypes = {
   value: PropTypes.string.isRequired
 };
 
-export default CartButton;
+export default OrderSummaryButton;

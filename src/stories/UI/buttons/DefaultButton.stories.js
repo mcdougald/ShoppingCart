@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultButton } from '../../../views/UI/Buttons/DefaultButton';
+import DefaultButton from '../../../views/UI/Buttons/DefaultButton';
 import ProductButton from '../../../views/UI/Buttons/ProductButton';
 
 export default {
