@@ -7,6 +7,8 @@ import PropTypes from "prop-types";
 import Panel from '../../../UI/Panel/Panel';
 import RegisterForm from '../RegisterForm/RegisterForm'
 
+import {ReactComponent as RegisterAccIcon} from '../../../../../src/assets/images/register-account-icon.svg'
+
 const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
 
 const registerImage = require('../../../../assets/images/register-account-icon.jpg');
@@ -22,10 +24,11 @@ class Register extends React.Component {
       <div className='column'>
         <Panel panelName={'user'}>
           <h2>Register Account</h2>
-          <img className='register-icon'
-               src={`${iconPath}register-account-icon.jpg`}
-               alt='Creating Account Icon'
-               rel={'preload'}/>
+          <RegisterAccIcon className='register-icon'/>
+          {/*<img className='register-icon'*/}
+          {/*     src={`${iconPath}register-account-icon.jpg`}*/}
+          {/*     alt='Creating Account Icon'*/}
+          {/*     rel={'preload'}/>*/}
           <RegisterForm />
         </Panel>
       </div>

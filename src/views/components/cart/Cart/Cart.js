@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import PropTypes from 'prop-types';
 import Panel from '../../../UI/Panel/Panel';
 import CartItem from '../CartItem/CartItem';
+
+import { ReactComponent as EmptyCartIcon } from '../../../../assets/images/empty-shopping-cart-icon-2.svg'
 import { CartButton } from '../../../UI/Buttons';
 
 import { removeFromCart, emptyCart, userEmptiesCart } from '../../../../state/ducks/cart/actions';
@@ -66,9 +68,10 @@ const Cart = ({ checkout, clear }) => {
 
   const emptyCartList = (
     <div className={'cart__items--empty alert'}>
-      <img className='empty-cart-icon'
-           src={`${iconPath}empty-shopping-cart-icon-2.svg`}
-           alt='Empty Cart Icon' />
+      <EmptyCartIcon className='empty-cart-icon'/>
+      {/*<img className='empty-cart-icon'*/}
+      {/*     src={`${iconPath}empty-shopping-cart-icon-2.svg`}*/}
+      {/*     alt='Empty Cart Icon' />*/}
       <span className='is-size-4'>Your cart is empty!</span> <br />
       <span className='is-size-6'>It looks like you haven't added any products to your cart yet.</span>
     </div>

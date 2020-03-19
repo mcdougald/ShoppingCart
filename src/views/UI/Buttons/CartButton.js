@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const CartButton = ({value, type, onClick}) => {
   return (
     <button
-      className={`button cart__button--${type}`}
+      className={`button is-primary cart__button--${type}`}
       onClick={onClick}
     >
       {value}

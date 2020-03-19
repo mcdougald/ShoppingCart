@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom'
 import loginAccountIcon from '../../../../../src/assets/images/login-account-icon.jpg'
+import {ReactComponent as LoginAccIcon} from '../../../../../src/assets/images/login-account-icon.svg'
+
 import { reduxForm } from 'redux-form';
 import PropTypes from "prop-types";
 
@@ -25,9 +27,10 @@ class Login extends React.Component {
       <div className='column'>
         <Panel panelName={'user'}>
           <h2>Login</h2>
-          <img className='login-icon'
-               src={loginAccountIcon}
-               alt='Login Icon' />
+          <LoginAccIcon className='login-icon'/>
+          {/*<img className='login-icon'*/}
+          {/*     src={loginAccountIcon}*/}
+          {/*     alt='Login Icon' />*/}
           <LoginForm />
         </Panel>
       </div>

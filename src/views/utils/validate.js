@@ -23,6 +23,39 @@ export const validateRegisterForm = values => {
   return errors;
 };
 
+const isValidCreditCardNumber = (value) =>
+  (/^4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12}$/i.test(value));
+
+const isValidCreditCardCVC =
+  (value) =>
+    (!(!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/i
+      .test(value) || value.toString().length < 3 || value.toString().length > 3));
+
+export const validateNewPaymentForm = values => {
+  const errors = {};
+  if (!values.cardNumber) {
+    errors.cardNumber = 'Please enter a valid credit card number.';
+  } else if ( !isValidCreditCardNumber(values.cardNumber)) {
+    errors.cardNumber = 'Invalid Credit Card Number';
+  }
+
+  if (!values.cardName) {
+    errors.cardName = 'Full Name on Card is Required'
+  }
+
+  if (!values.cardValidDate) {
+    errors.cardValidDate = 'Card Expiration Date is Required'
+  }
+
+  if (!values.cardCVV) {
+    errors.cardCVV = 'Card CVV code is Required'
+  } else if ( !isValidCreditCardCVC(values.cardCVV)) {
+    errors.cardCVV = 'Invalid CVV Code'
+  }
+
+  return errors;
+};
+
 /*
 accountInformationForm: {
   firstName: {
