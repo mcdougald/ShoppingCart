@@ -18,4 +18,17 @@ const ProductList = ({ products }) => {
   );
 };
 
+ProductList.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number,
+    image: PropTypes.string,
+    description: PropTypes.string,
+    isInCart: PropTypes.bool.isRequired,
+    addToCart: PropTypes.func.isRequired,
+    removeFromCart: PropTypes.func.isRequired
+  }))
+};
+
 export default ProductList

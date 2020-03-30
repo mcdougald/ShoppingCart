@@ -1,16 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 import { Field, reduxForm, Form } from 'redux-form';
 
 import { login } from '../../../../state/ducks/user/actions';
+
+// Compose function allows writing out multiple HOC with a much better syntax.
+// Better than manually chaining together with sets of ()()()
 import { compose } from "redux";
 
 import Input from '../../../UI/Input/Input';
 
 const LoginForm = (props) => {
+
   const { handleSubmit, isSubmitting } = props;
 
   const onLogin = values => {
+    console.log(`Login Form Values: ${values}`);
     props.login(values);
 
   };
@@ -40,7 +46,8 @@ const LoginForm = (props) => {
       </div>
       <div className='button-group'>
         <button
-          className='button make-center is-paddingless' type='submit'>Login
+          className='button make-center is-paddingless' type='submit'>
+          Login
         </button>
         <p><a href='/'>Forgot username or password</a></p>
       </div>
@@ -81,7 +88,7 @@ const withForm = reduxForm({
   onSubmit: login
 });
 
-
+// List out the HOC for the Component, HOC are applied in series
 const enhance = compose(
   withConnect,
   withForm

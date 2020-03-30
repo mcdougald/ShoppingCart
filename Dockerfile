@@ -7,7 +7,9 @@ FROM node:12-alpine
 # Add "metadata" to image with LABEL command:
 #   metadata is sometimes used by external programs, for example nvidia-docker
 #   requires a label to work properly.
-LABEL maintainer "TrevorMcDougald"
+LABEL maintainer="TrevorMcDougald"
+LABEL version="1.0"
+LABEL description="React Ecommerce Store Front-end"
 
 
 # Create a work directory and copy over our dependency manifest files.

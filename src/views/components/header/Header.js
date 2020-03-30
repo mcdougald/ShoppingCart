@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 
 import HeaderLink from '../../UI/HeaderLink/HeaderLink';
@@ -35,6 +36,12 @@ const Header = ({ isAuthenticated, userID }) => {
     </div>
   );
 };
+
+Header.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  userID: PropTypes.number.isRequired
+};
+
 
 const mapStateToProps = (state) => ({
   userID: state.user.id,
