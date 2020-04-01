@@ -1,5 +1,8 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 
+// For tracking performance, enter the query string "?react_perf"
+// in the localhost URL
+
 // Put ?debug_session=___ at end of url to persist data in redux devtools
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';

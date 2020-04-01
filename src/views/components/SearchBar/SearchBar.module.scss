@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+input.input.search-bar__input {
+  width: 80%;
+  margin: 0 0 0 3rem;
+  padding: 0 25px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(66, 46, 125, 0.44);
+  outline: none;
+
+  &:focus {
+    transition: 0.35s ease;
+    box-shadow: none !important;
+    border: solid 2px $info;
+    color: $dark-purple;
+  }
+
+  &:hover {
+    transition: 0.35s ease;
+    border: solid 2px $info;
+  }
+}

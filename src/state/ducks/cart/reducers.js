@@ -18,8 +18,8 @@ const cartReducer = createReducer(initialState, {
     if (itemIndex === -1) {
 
       const cartItems = [
-        { ...action.payload, quantity: 1, subtotal: action.payload.price },
-        ...state.cartItems
+        ...state.cartItems,
+        { ...action.payload, quantity: 1, subtotal: action.payload.price }
       ];
 
       const subtotal = cartItems.reduce((result, cartItem) => cartItem.subtotal + result, 0);
