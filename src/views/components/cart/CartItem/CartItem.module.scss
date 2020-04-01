@@ -4,6 +4,9 @@
   }
 }
 
+.cart-cell-2 {
+  text-align: center !important;
+}
 
 .cart-item__title {
   min-width: max-content;
@@ -22,9 +25,16 @@
 
 .table__cell--delete {
   border-bottom: none !important;
+  vertical-align: middle !important;
+  padding-left: 0 !important;
 }
 
-.cart-item__price {
+td.cart-item__price {
   height: fit-content;
   width: fit-content;
+  vertical-align: middle !important;
+}
+
+td.cart-item__quantity {
+  vertical-align: middle !important;
 }

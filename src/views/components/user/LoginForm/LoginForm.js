@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
-import { Field, reduxForm, Form } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 
 import { login } from '../../../../state/ducks/user/actions';
 
@@ -9,11 +9,9 @@ import { login } from '../../../../state/ducks/user/actions';
 // Better than manually chaining together with sets of ()()()
 import { compose } from "redux";
 
-import Input from '../../../UI/Input/Input';
-
 const LoginForm = (props) => {
 
-  const { handleSubmit, isSubmitting } = props;
+  const { handleSubmit } = props;
 
   const onLogin = values => {
     console.log(`Login Form Values: ${values}`);
@@ -60,14 +58,19 @@ const LoginForm = (props) => {
 // })(LoginForm)
 // export default LoginForm;
 
-const mapStateToProps = state => {
-  return {
-    user: state.form['LoginForm']
-    ? state.form['LoginForm'].values
-      : undefined
-  };
-
+LoginForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  login: PropTypes.func
 };
+
+// const mapStateToProps = state => {
+//   return {
+//     user: state.form['LoginForm']
+//     ? state.form['LoginForm'].values
+//       : undefined
+//   };
+//
+// };
 
 const mapDispatchToProps = {
   login

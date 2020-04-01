@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Panel from '../../../UI/Panel/Panel';
 import OrderTableBody from './OrderTableBody';
 import OrderTotals from './OrderTotals';
@@ -9,9 +9,9 @@ import EmptyOrder from './EmptyOrder';
 
 const OrderSummary = () => {
 
-    const { order } = useSelector(state => ({
-      order: state.cart
-    }));
+    const order  = useSelector(( {cart} ) => (
+      cart
+    ));
 
     const orderProducts = order.cartItems;
 
@@ -42,7 +42,7 @@ const OrderSummary = () => {
 };
 
 OrderSummary.propTypes = {
-
+  order: PropTypes.object,
 };
 
 export default OrderSummary;

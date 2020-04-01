@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Panel from '../../../UI/Panel/Panel';
 import NoSavedPayment from '../PaymentMethods/NoSavedPayment';
 import NewPaymentMethod from '../NewPaymentMethod';

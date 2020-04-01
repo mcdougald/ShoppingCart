@@ -9,10 +9,6 @@ import RegisterForm from '../RegisterForm/RegisterForm'
 
 import {ReactComponent as RegisterAccIcon} from '../../../../../src/assets/images/register-account-icon.svg'
 
-const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
-
-const registerImage = require('../../../../assets/images/register-account-icon.jpg');
-
 
 class Register extends React.Component {
 
@@ -35,6 +31,11 @@ class Register extends React.Component {
     );
   }
 }
+
+Register.propTypes = {
+  isAuthenticated: PropTypes.bool,
+  userID: PropTypes.string,
+};
 
 const mapStateToProps = (state) => ({
   userID: state.user.id,

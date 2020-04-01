@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm, Form } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 
 import { validateNewPaymentForm } from '../../../../utils/validate';
 import RenderPaymentInput from './RenderPaymentInput';
@@ -53,7 +53,10 @@ const NewPaymentForm = props => {
 };
 
 NewPaymentForm.propTypes = {
-
+  pristine: PropTypes.bool, // added by redux-form
+  valid: PropTypes.bool, // added by redux-form
+  handleSubmit: PropTypes.func, // added by redux-form
+  submitting: PropTypes.bool, // added by redux-form
 };
 
 export default reduxForm({

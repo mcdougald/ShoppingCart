@@ -1,5 +1,3 @@
-import { LOCATION_OPTIONS } from '../../config/locations';
-
 export const validateRegisterForm = values => {
   const errors = {};
   if (!values.username) {

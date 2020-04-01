@@ -22,7 +22,12 @@ const RenderPaymentInput = ( {input, classString, label, placeholder, type, meta
 };
 
 RenderPaymentInput.propTypes = {
-
+  classString: PropTypes.string,
+  placeholder: PropTypes.string,
+  input: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired,
+  label: PropTypes.string,
+  type: PropTypes.string.isRequired,
 };
 
 export default RenderPaymentInput;

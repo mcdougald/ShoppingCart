@@ -27,7 +27,7 @@ const OrderRow = ({orderProduct}) => {
 };
 
 OrderRow.propTypes = {
-
+  orderProduct: PropTypes.object.isRequired,
 };
 
 export default OrderRow;

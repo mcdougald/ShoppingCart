@@ -18,13 +18,13 @@ const Product = ({
   removeFromCart,
   isInCart
 }) => {
-  const handleClick = () => {
-    if (isInCart) {
-      removeFromCart(id);
-    } else {
-      addToCart(id);
-    }
-  };
+  // const handleClick = () => {
+  //   if (isInCart) {
+  //     removeFromCart(id);
+  //   } else {
+  //     addToCart(id);
+  //   }
+  // };
 
   const handleAddToCart = (event, productToCartItem) => {
     event.preventDefault();

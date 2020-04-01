@@ -1,10 +1,10 @@
 import React from "react";
-import {
-  NavLink,
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from "react-router-dom";
+// import {
+//   NavLink,
+//   BrowserRouter as Router,
+//   Route,
+//   Switch
+// } from "react-router-dom";
 
 const Footer = () => {
   return (

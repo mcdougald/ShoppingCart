@@ -9,8 +9,6 @@ import Panel from '../../../UI/Panel/Panel';
 
 import LoginForm from '../LoginForm/LoginForm';
 
-const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
-
 
 const Login = ( props ) => {
   if (props.isAuthenticated) {

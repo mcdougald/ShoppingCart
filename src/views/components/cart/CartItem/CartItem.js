@@ -4,22 +4,32 @@ import PropTypes from 'prop-types';
 const CartItem = ({ id, name, price, subtotal, quantity, onClick }) => {
   return (
       <React.Fragment>
-        <td className={`has-text-centered id-data-${id}`}>
+        <td className={`has-text-centered cart-item__title productID-${id}`}>
           <div className='title'>
             {name}
           </div>
         </td>
-        <td className={'has-text-centered'}>
-          <div className='is-centered'>
+        <td className={'has-text-centered cart-item__quantity'}>
+          <p className='has-text-centered cart-cell-2'>
             {quantity}
-          </div>
+          </p>
         </td>
-        <td className={'has-text-centered'}>$ {subtotal}</td>
+        <td className={'has-text-centered cart-item__price'}>
+          <p className='has-text-centered cart-cell-2'>$ {subtotal}
+          </p>
+        </td>
         <td className={'table__cell--delete'}>
           <div className='is-small'>
+            {/* eslint-disable-next-line jsx-a11y/anchor-has-content,jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events */}
             <a
+              role='button'
               className={'delete is-small cart-item__delete'}
-              onClick={onClick}></a>
+              onClick={onClick}
+              onKeyDown={onClick}
+              tabIndex={0}
+            >
+
+            </a>
           </div>
         </td>
       </React.Fragment>

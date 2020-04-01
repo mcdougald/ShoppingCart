@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Field, reduxForm } from 'redux-form/';
 import { validateRegisterForm } from '../../../utils/validate';
 
@@ -107,6 +108,28 @@ const RegisterForm = props => {
       </div>
     </form>
   )
+};
+
+renderTextField.propTypes = {
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
+  input: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired,
+  label: PropTypes.string,
+  type: PropTypes.string.isRequired,
+};
+
+renderPasswordField.propTypes = {
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
+  input: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired,
+  label: PropTypes.string,
+  type: PropTypes.string.isRequired,
+};
+
+RegisterForm.propTypes = {
+  handleSubmit: PropTypes.func
 };
 
 export default reduxForm({

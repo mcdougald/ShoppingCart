@@ -6,7 +6,6 @@ const ProductButton = ({value, onClick}) => {
     <button
       className={'button is-small is-info product__button'}
       onClick={onClick}
-      autoFocus={true}
     >
       {value}
     </button>
@@ -14,7 +13,8 @@ const ProductButton = ({value, onClick}) => {
 };
 
 ProductButton.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  onClick: PropTypes.func
 };
 
 export default ProductButton;

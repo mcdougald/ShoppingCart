@@ -1,10 +1,8 @@
 import React from "react";
-import { Field, reduxForm } from 'redux-form/';
-import Select from "react-select";
-import PropTypes from "prop-types";
-import Input from "../../../UI/Input/Input";
-
-import { LOCATION_OPTIONS } from "../../../../config/locations";
+// import { Field, reduxForm } from 'redux-form/';
+// import Select from "react-select";
+// import PropTypes from "prop-types";
+// import Input from "../../../UI/Input/Input";
 
 import Panel from "../../../UI/Panel/Panel";
 

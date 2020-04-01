@@ -13,7 +13,9 @@ const OrderSummaryButton = ({value, type, onClick}) => {
 };
 
 OrderSummaryButton.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  onClick: PropTypes.func
 };
 
 export default OrderSummaryButton;

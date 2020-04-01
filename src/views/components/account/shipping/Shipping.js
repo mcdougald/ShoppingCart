@@ -1,6 +1,4 @@
 import React from 'react';
-import { LOCATION_OPTIONS } from '../../../../config/locations';
-import Input from '../../../UI/Input/Input';
 
 import Panel from "../../../UI/Panel/Panel";
 import ShippingForm from './ShippingForm';

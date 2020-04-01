@@ -13,7 +13,9 @@ const CartButton = ({value, type, onClick}) => {
 };
 
 CartButton.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 export default CartButton;

@@ -21,8 +21,20 @@ const OrderTotals = ({subtotal = 0, tax = 0, shipping = 0, total = 0}) => {
   );
 };
 
-OrderTotals.propTypes = {
+OrderTotals.displayName = 'OrderTotals';
 
+OrderTotals.defaultProps = {
+  subtotal: 0,
+  tax: 0,
+  shipping: 0,
+  total: 0
 };
+
+OrderTotals.propTypes = {
+  subtotal: PropTypes.number,
+  tax: PropTypes.number,
+  shipping: PropTypes.number,
+  total: PropTypes.number
+ };
 
 export default OrderTotals;

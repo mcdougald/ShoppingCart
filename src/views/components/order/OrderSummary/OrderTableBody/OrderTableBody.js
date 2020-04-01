@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import OrderRow from '../OrderRow';
 
-const OrderTableBody = ({orderProducts}) => {
+const OrderTableBody = ({ orderProducts }) => {
   let rows = [];
 
   orderProducts.map( (product) =>
@@ -25,7 +25,7 @@ const OrderTableBody = ({orderProducts}) => {
 };
 
 OrderTableBody.propTypes = {
-
+  orderProducts: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default OrderTableBody;

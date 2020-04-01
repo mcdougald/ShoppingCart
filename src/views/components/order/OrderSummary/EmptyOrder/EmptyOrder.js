@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const EmptyOrder = props => {
   return (
@@ -9,8 +9,5 @@ const EmptyOrder = props => {
   );
 };
 
-EmptyOrder.propTypes = {
-
-};
 
 export default EmptyOrder;

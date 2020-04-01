@@ -7,13 +7,11 @@ import CartItem from '../CartItem/CartItem';
 import { ReactComponent as EmptyCartIcon } from '../../../../assets/images/empty-shopping-cart-icon-2.svg'
 import { CartButton } from '../../../UI/Buttons';
 
-import { removeFromCart, emptyCart, userEmptiesCart } from '../../../../state/ducks/cart/actions';
-
-const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
+import { removeFromCart, emptyCart } from '../../../../state/ducks/cart/actions';
 
 
-const Cart = ({ checkout, clear }) => {
-  const { cart } = useSelector(state => ({cart: state.cart}));
+const Cart = () => {
+  const cart  = useSelector(( { cart } ) => (cart));
   const dispatch = useDispatch();
 
   const handleEmptyCartButton = useCallback(
@@ -73,7 +71,7 @@ const Cart = ({ checkout, clear }) => {
       {/*     src={`${iconPath}empty-shopping-cart-icon-2.svg`}*/}
       {/*     alt='Empty Cart Icon' />*/}
       <span className='is-size-4'>Your cart is empty!</span> <br />
-      <span className='is-size-6'>It looks like you haven't added any products to your cart yet.</span>
+      <span className='is-size-6'>It looks like you haven&apos t added any products to your cart yet.</span>
     </div>
   );
 
@@ -92,7 +90,7 @@ const Cart = ({ checkout, clear }) => {
 };
 
 Cart.propTypes = {
-
+  cart: PropTypes.object
 };
 
 // const mapStateToProps = (state) => ({
