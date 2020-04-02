@@ -12,6 +12,11 @@
 
   }
 
+.rows {
+  display: flex !important;
+  flex-direction: column;
+}
+
 .center-table td {
   text-align: center !important;
   vertical-align: middle !important;

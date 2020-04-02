@@ -1,10 +1,10 @@
 import React from 'react';
 // import logo from '../assets/images/logo.svg';
 import './App.scss';
-import '../components/header/Header.module.scss'
+import '../components/Header/Header.module.scss'
 import {BrowserRouter as Router} from 'react-router-dom';
 
-import Header from '../components/header/Header'
+import Header from '../components/Header/Header'
 import Footer from '../components/footer/Footer'
 import PageRoutes from '../routes/Page-Routes'
 

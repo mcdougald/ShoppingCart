@@ -1,5 +1,5 @@
 import React from 'react';
-import Shipping from '../../views/components/account/shipping/Shipping';
+import Shipping from '../../views/components/account/Shipping/Shipping';
 
 export default {
   title: 'ShippingForm',

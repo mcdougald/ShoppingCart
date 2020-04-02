@@ -23,3 +23,12 @@ export const filterProductsByCategory = (category) => ({
   type: types.FILTER_PRODUCTS_BY_CATEGORY,
   category
 });
+
+export const handleNextProductPage = (nextPage) => ({
+
+});
+
+export const jumpProductPage = (newPage) => ({
+  type: types.JUMP_PRODUCT_PAGE,
+  newPage
+});

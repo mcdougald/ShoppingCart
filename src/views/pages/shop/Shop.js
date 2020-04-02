@@ -5,12 +5,13 @@ import { useSelector } from "react-redux";
 import ProductList from '../../components/products/ProductList/ProductList';
 import Cart from '../../components/cart/Cart/Cart';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import ProductPagination from '../../components/products/Pagination/ProductPagination';
 
 
 const Shop = () => {
 
   const searchValue = useSelector( ({ products }) => (products.searchValue) );
-  const products = useSelector( ({ products }) => (products.filteredProducts));
+  const products = useSelector( ({ products }) => (products.currentPageProducts));
 
   return (
     <div className="row">
@@ -18,11 +19,13 @@ const Shop = () => {
         Browse our Products!
       </h2>
       <div className="store columns">
-        <div className='is-paddingless column'>
+        <div className='product__column is-paddingless column'>
+          <SearchBar searchValue={searchValue} />
+          <ProductPagination />
           <div className='store-products'>
-            <SearchBar searchValue={searchValue} />
             <ProductList products={products} />
           </div>
+          <ProductPagination />
         </div>
         <div className='column is-4'>
           <div className='store-cart'>

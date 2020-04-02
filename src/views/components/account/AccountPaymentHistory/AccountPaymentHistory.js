@@ -3,7 +3,7 @@ import React from 'react';
 import Panel from "../../../UI/Panel/Panel";
 
 
-const Payments = () => {
+const AccountPaymentHistory = () => {
   return (
     <div className="column is-variable">
       <Panel panelName={'payments'}>
@@ -13,4 +13,4 @@ const Payments = () => {
   );
 };
 
-export default Payments
+export default AccountPaymentHistory

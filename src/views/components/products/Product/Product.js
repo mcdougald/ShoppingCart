@@ -33,10 +33,9 @@ const Product = ({
 
   return (
     <div className={"row"}>
-      <div className={'is-paddingless column'}>
         <Panel panelName={'product'}>
         <div className={'is-marginless columns'}>
-          <div className={'product__identifiers is-paddingless is-3 is-narrow column'}>
+          <div className={'product__identifiers is-paddingless is-3 is-narrow column rows'}>
             <div className={'product__title'}>
               <h3>{name}</h3>
             </div>
@@ -45,32 +44,31 @@ const Product = ({
             </div>
           </div>
           <div className={' is-marginless column is-centered is-flex'}>
-            <div className={'columns is-desktop is-flex'}>
-              <div className={'is-flex is-vcentered column'}>
-                <div className={'product__description '}>{description}</div>
-              </div>
-              <div className={'is-paddingless is-3 column'}>
+            <div className={'is-desktop is-flex'}>
+              <div className={'product__description column is-paddingless'}>{description}</div>
+              <div className={'is-paddingless is-3 column rows'}>
                 <div className={'product__price'}>$ {price}</div>
-                <ProductButton
+                <div className='product__button--justify'><ProductButton
                   className={'is-inverted'}
                   value={'Add to Cart'}
-                  onClick={(e) => {handleAddToCart(
-                    e,
-                    {
-                      id,
-                      name,
-                      price,
-                      image,
-                      description
-                    })}}
+                  onClick={( e ) => {
+                    handleAddToCart(
+                      e,
+                      {
+                        id,
+                        name,
+                        price,
+                        image,
+                        description
+                      } );
+                  }}
                 >
-                </ProductButton>
+                </ProductButton></div>
               </div>
             </div>
           </div>
         </div>
       </Panel>
-      </div>
     </div>
   );
 };

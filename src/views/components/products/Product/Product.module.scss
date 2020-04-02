@@ -10,7 +10,7 @@
 
 .product__description {
   font-size: 1.2rem;
-  margin: .5rem .2rem .5rem .2rem;
+  align-self: center;
   color: #5036ab;
   max-width: 442px;
 }
@@ -31,6 +31,15 @@
 
   > img {
     background-color: white;
+    mix-blend-mode: multiply;
   }
 
+}
+
+.product__identifiers {
+  justify-content: space-evenly;
+}
+
+.product__column {
+  margin: 0 0 5rem 0;
 }
