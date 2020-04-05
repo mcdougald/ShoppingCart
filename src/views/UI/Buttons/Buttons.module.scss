@@ -13,6 +13,18 @@
 
 }
 
+.cart__button--checkout,
+.cart__button--clear {
+
+  margin-right: 1em !important;
+
+  &:hover {
+    color: white;
+    background-color: $purple !important;
+    box-shadow: 0 0 .5em #1b152d;
+  }
+}
+
 
 .button {
 
@@ -22,7 +34,10 @@
   }
 
   &.product__button {
-    margin: 6rem 0 1rem 0;
+    //margin: 6.5rem 0 1rem 0;
+    align-items: center;
+    width: 70%;
+    border-radius: 6px !important;
   }
 
   &.account-save__button {
@@ -36,4 +51,8 @@
     margin: 1.5rem 1rem 1rem 0;
   }
 
+}
+
+.product__button--justify {
+  padding-top: 60%;
 }

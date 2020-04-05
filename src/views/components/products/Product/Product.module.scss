@@ -1,16 +1,16 @@
 @import '../../../styles/variables';
 
 .product__price {
-  color: #003d00;
+  color: #484678;
   padding: 1rem 1rem 0 0;
-  font-size: 1.6em;
-  font-weight: bold;
+  font-size: 2em;
+  font-weight: 800;
   text-align: end;
 }
 
 .product__description {
   font-size: 1.2rem;
-  margin: .5rem .2rem .5rem .2rem;
+  align-self: center;
   color: #5036ab;
   max-width: 442px;
 }
@@ -31,6 +31,15 @@
 
   > img {
     background-color: white;
+    mix-blend-mode: multiply;
   }
 
+}
+
+.product__identifiers {
+  justify-content: space-evenly;
+}
+
+.product__column {
+  margin: 0 0 5rem 0;
 }

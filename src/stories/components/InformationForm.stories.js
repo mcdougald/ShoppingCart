@@ -1,5 +1,5 @@
 import React from 'react';
-import Information from '../../views/components/account/information/Information';
+import Information from '../../views/components/account/Information/Information';
 
 export default {
   title: 'InformationForm',

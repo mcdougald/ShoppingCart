@@ -1,0 +1,56 @@
+@import '../../../../styles/variables';
+// 21 26 47
+.payment-form__input {
+  border: 2px solid rgba(16, 3, 47, 0.6);
+  color: black;
+  border-radius: 10px;
+  outline: none;
+  position: relative;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  padding: .3rem 0 .3rem 1rem;
+
+  &.cvv-input-field {
+    width: 15%;
+  }
+
+  &.valid-date-input-field {
+    width: 18%;
+  }
+
+  &.card-number-input-field {
+    width: 70%;
+  }
+
+  &.card-name-input-field {
+    width: 70%;
+  }
+
+  &.payment-input-has-error {
+    border: 2px solid salmon !important;
+
+  }
+
+  &:focus {
+    border: 2px solid #c1b5e4;
+  }
+}
+
+.payment-form__label {
+  color: $purple;
+  font-weight: 500;
+  padding: 0 1rem 0 0;
+  white-space: pre;
+
+  &.payment-label-has-error {
+    color: #f48878;
+  }
+}
+
+.payment-error-field {
+  color: salmon;
+  display: block;
+  font-size: .75rem;
+  padding: 0.2rem 0 0 0.4rem;
+}

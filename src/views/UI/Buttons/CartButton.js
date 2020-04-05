@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const CartButton = ({value, type, onClick}) => {
   return (
     <button
-      className={`button cart__button--${type}`}
+      className={`button is-primary cart__button--${type}`}
       onClick={onClick}
     >
       {value}
@@ -13,7 +13,9 @@ const CartButton = ({value, type, onClick}) => {
 };
 
 CartButton.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 export default CartButton;

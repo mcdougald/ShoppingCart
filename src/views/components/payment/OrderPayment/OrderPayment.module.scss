@@ -1,0 +1,59 @@
+@import '../../../styles/variables';
+
+.order-payment {
+  margin: 2rem 0 1rem 0;
+}
+
+.order-payment__title {
+  padding: 1rem 0 1rem 1.5rem;
+  font-size: 1.8rem;
+  color: $dark-purple;
+  font-weight: 700;
+  text-align: start;
+}
+
+.no-saved-payments {
+
+  padding: 1rem;
+
+  > h2 {
+    color: $dark-primary-purple;
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: start;
+    padding: 0 0 0 2rem;
+  }
+
+  > p {
+    font-size: 1.2rem;
+    color: salmon;
+    padding: 2rem 0 2rem 8rem;
+  }
+
+}
+
+.new-payment-method {
+  padding: 0.5rem 3rem 1rem 3rem;
+
+  > p {
+    font-size: 0.75rem;
+    padding: 0 0 1rem 0;
+  }
+}
+
+.payment-buttons {
+  margin: 0.25rem 0 1rem 1rem;
+}
+
+.use-card-button {
+  margin: 0 1rem 0 0;
+  &:hover {
+    background-color: #7748d3 !important;
+  }
+}
+
+.cancel-order-button {
+  &:hover {
+    background-color: #7748d3 !important;
+  }
+}

@@ -1,11 +1,7 @@
 import React from "react";
-import { NavLink, Switch, Route } from 'react-router-dom';
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
-import Panel from "../../../UI/Panel/Panel";
-import Account from '../information/Information';
-import Shipping from '../shipping/Shipping';
+import { NavLink } from 'react-router-dom';
+import { connect } from "react-redux";
 
 
 const Sidebar = ({ username }) => {
@@ -53,6 +49,10 @@ return (
     </nav>
   </div>
   );
+};
+
+Sidebar.propTypes = {
+  username: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({

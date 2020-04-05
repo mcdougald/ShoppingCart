@@ -13,7 +13,8 @@ const AccountSaveButton = ({value, onClick}) => {
 };
 
 AccountSaveButton.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  onClick: PropTypes.func
 };
 
 export default AccountSaveButton;

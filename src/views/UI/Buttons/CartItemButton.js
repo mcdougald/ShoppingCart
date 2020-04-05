@@ -12,7 +12,8 @@ const CartItemButton = ({value, onClick}) => {
 };
 
 CartItemButton.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  onClick: PropTypes.func
 };
 
 export default CartItemButton;

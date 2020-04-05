@@ -5,15 +5,15 @@
 @import '../styles/variables';
 
 
-@import '../components/header/Header.module';
-@import '../components/account/information/Information.module';
+@import '../components/Header/Header.module';
+@import '../components/account/Information/Information.module';
 @import '../pages/not-found/Not-Found.module';
 @import '../pages/shop/Shop.module';
 @import '../components/footer/Footer.module';
 @import '../UI/Input/Input.module';
 @import '../UI/Buttons/Buttons.module';
 @import '../UI/Panel/Panel.module';
-@import '../components/account/sidebar/Sidebar.module';
+@import '../components/account/Sidebar/Sidebar.module';
 @import '../components/user/LoginForm/LoginForm.module';
 @import '../components/user/Login/Login.module';
 @import '../components/user/RegisterForm/RegisterForm.module';
@@ -23,7 +23,10 @@
 @import '../components/cart/Cart/cart.module';
 @import '../components/cart/CartItem/CartItem.module';
 @import '../components/order/OrderSummary/OrderSummary.module';
-
+@import '../components/payment/OrderPayment/OrderPayment.module';
+@import '../components/payment/NewPaymentMethod/NewPaymentForm/NewPaymentForm.module';
+@import '../pages/checkout/Checkout.module';
+@import '../components/SearchBar/SearchBar.module';
 
 @import '../../../node_modules/bulma/sass/utilities/all';
 @import '../../../node_modules/bulma/sass/base/all';

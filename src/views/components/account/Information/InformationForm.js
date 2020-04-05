@@ -7,7 +7,7 @@ import AccountSaveButton from '../../../UI/Buttons/AccountSaveButton';
 import AccountResetButton from '../../../UI/Buttons/AccountResetButton';
 
 const InformationForm = props => {
-  const { handleSubmit, isSubmitting } = props;
+  const { handleSubmit } = props;
 
   return (
     <form
@@ -137,10 +137,13 @@ const InformationForm = props => {
   );
 };
 
-InformationForm.propTypes = {};
+InformationForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
 
 export default reduxForm({
   form: "accountInformationForm",
   destroyOnUnmount: true,
-  forceUnregisterOnUnmount: true
+  forceUnregisterOnUnmount: true,
+  validate: validateRegisterForm
 })(InformationForm);

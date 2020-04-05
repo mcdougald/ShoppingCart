@@ -1,8 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { combineReducers } from 'redux';
 
 import * as types from './types';
-import * as utils from './utils';
 
 const initialState = {
   cartItems: [],
@@ -20,8 +18,8 @@ const cartReducer = createReducer(initialState, {
     if (itemIndex === -1) {
 
       const cartItems = [
-        { ...action.payload, quantity: 1, subtotal: action.payload.price },
-        ...state.cartItems
+        ...state.cartItems,
+        { ...action.payload, quantity: 1, subtotal: action.payload.price }
       ];
 
       const subtotal = cartItems.reduce((result, cartItem) => cartItem.subtotal + result, 0);

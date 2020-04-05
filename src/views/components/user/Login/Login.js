@@ -1,39 +1,40 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Redirect } from 'react-router-dom'
-import loginAccountIcon from '../../../../../src/assets/images/login-account-icon.jpg'
-import { reduxForm } from 'redux-form';
-import PropTypes from "prop-types";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import { ReactComponent as LoginAccIcon } from '../../../../../src/assets/images/login-account-icon.svg';
 
 import Panel from '../../../UI/Panel/Panel';
 
 import LoginForm from '../LoginForm/LoginForm';
-import { login } from '../../../../state/ducks/user/actions';
-import { compose } from "redux";
-const iconPath = process.env.PUBLIC_URL + '/assets/icons/';
 
 
-class Login extends React.Component {
-
-
-  render() {
-    if(this.props.isAuthenticated)
-      return <Redirect to={`/user:${this.props.userID}`} />;
-
-
-    return (
-      <div className='column'>
-        <Panel panelName={'user'}>
-          <h2>Login</h2>
-          <img className='login-icon'
-               src={loginAccountIcon}
-               alt='Login Icon' />
-          <LoginForm />
-        </Panel>
-      </div>
-    );
+const Login = ( props ) => {
+  if (props.isAuthenticated) {
+    return <Redirect to={`/user:${props.userID}`}/>;
   }
-}
+
+
+  return (
+    <div className='column'>
+      <Panel panelName={'user'}>
+        <h2>Login</h2>
+        <LoginAccIcon className='login-icon'/>
+        {/*<img className='login-icon'*/}
+        {/*     src={loginAccountIcon}*/}
+        {/*     alt='Login Icon' />*/}
+        <LoginForm/>
+      </Panel>
+    </div>
+  );
+};
+
+
+Login.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  userID: PropTypes.number.isRequired
+};
 
 // export default Login;
 

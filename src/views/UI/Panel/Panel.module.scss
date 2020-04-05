@@ -8,7 +8,9 @@
 }
 
 
-$panel-shadow: 0 0.5em 1em -0.125em rgba($purple, 0.3), 0 0px 0 1px rgba($purple, 0.04);
+.panel-shadow{
+  box-shadow: 0 0 .5em 0.125em rgba($purple, 0.2), 0 0 .5em .2em rgba($purple, 0.3) !important;
+}
 
 .panel {
   background-color: #F5F2FF;
@@ -87,10 +89,23 @@ $panel-shadow: 0 0.5em 1em -0.125em rgba($purple, 0.3), 0 0px 0 1px rgba($purple
   &.panel__order-summary {
     @extend .panel;
     background-color: #ffffff;
-    -webkit-box-shadow: 0 0 6px 1px #ffe8fe;
-    box-shadow: 0 0.2em 1em 0.1em rgba(179, 157, 253, 0.13),
-    0 0.2em 1em 0.1em rgba(179, 157, 253, 0.03) !important;
+    -webkit-box-shadow: 0 0 6px 1px #ffe8fe, 0 0 6px 1px #ffe8fe;
+    box-shadow: 0 0 1em 0 rgba(224, 193, 255, 0.9),
+    0 0 .1em 0 rgba(224, 193, 255, 1) !important;
+    padding: .5rem;
+    border-radius: 12px !important;
+    min-height: 400px;
+  }
 
+  &.panel__order-payment {
+    @extend .panel;
+    @extend .panel-shadow;
+    min-width: 600px;
+    min-height: 400px;
+    margin: 0 0 1rem 0;
+    > p {
+      padding: 0 0 0 1rem;
+    }
   }
 }
 

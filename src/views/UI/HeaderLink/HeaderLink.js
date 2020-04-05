@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 
@@ -15,6 +16,11 @@ const HeaderLink = (props) => {
       </NavLink>
     </li>
   )
+};
+
+HeaderLink.propTypes = {
+  URI: PropTypes.string.isRequired,
+  linkTitle: PropTypes.string.isRequired,
 };
 
 export default HeaderLink;
