@@ -15,9 +15,7 @@ const Shop = () => {
 
   return (
     <div className="row">
-      <h2 className='store-products__title'>
-        Browse our Products!
-      </h2>
+
       <div className="store columns">
         <div className='product__column is-paddingless column'>
           <SearchBar searchValue={searchValue} />

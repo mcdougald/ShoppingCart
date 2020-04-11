@@ -71,7 +71,8 @@ const Cart = () => {
       {/*     src={`${iconPath}empty-shopping-cart-icon-2.svg`}*/}
       {/*     alt='Empty Cart Icon' />*/}
       <span className='is-size-4'>Your cart is empty!</span> <br />
-      <span className='is-size-6'>It looks like you haven&apos t added any products to your cart yet.</span>
+      {/* eslint-disable-next-line react/no-unescaped-entities */}
+      <span className='is-size-6'>It looks like you haven't added any products to your cart yet.</span>
     </div>
   );
 

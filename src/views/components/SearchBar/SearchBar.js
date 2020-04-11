@@ -10,14 +10,17 @@ const SearchBar = ({ searchValue }) => {
 
 
   return (
-    <div>
+    <div className='control has-icons-right'>
       <input
         className='input search-bar__input'
         type="search"
-        placeholder="Search our Products"
+        placeholder="Search Products..."
         value={searchValue}
         onChange={(e) => dispatch(productsOperations.filterProductsByName(e.target.value))}
       />
+      <span className="icon is-large is-right search-icon" key={Math.random()}>
+            <i className="fas fa-search"></i>
+      </span>
     </div>
   );
 };

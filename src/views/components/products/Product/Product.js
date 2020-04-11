@@ -32,7 +32,7 @@ const Product = ({
   };
 
   return (
-    <div className={"row"}>
+    <div className={"row product__box"}>
         <Panel panelName={'product'}>
         <div className={'is-marginless columns'}>
           <div className={'product__identifiers is-paddingless is-3 is-narrow column rows'}>
