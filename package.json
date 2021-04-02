@@ -98,7 +98,7 @@
     "@storybook/addon-viewport": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/preset-create-react-app": "^2.1.1",
-    "@storybook/react": "^5.3.18",
+    "@storybook/react": "^6.2.1",
     "@storybook/theming": "latest",
     "prettier": "2.0.2",
     "sass-lint": "^1.13.1",
